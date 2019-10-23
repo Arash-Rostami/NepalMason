@@ -1882,6 +1882,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'navbarManager',
   mounted: function mounted() {
@@ -1903,7 +1922,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nli[data-v-3bb4aec2] {\n    list-style: none;\n}\n.top-left[data-v-3bb4aec2] {\n    float: left;\n}\n.navbar-color[data-v-3bb4aec2] {\n    background-color: #8CD9DE;\n    border-color: #8CD9DE;\n    color: black;\n    height: 55px;\n    border-right: 2px solid #0C9A9A;\n}\n.dropdown-toggle i[data-v-3bb4aec2] {\n    width: 43px;\n    height: 44px;\n    border-radius: 100%;\n    color: #164aa9;\n    background-color: #f5e9e9;\n    margin-top: 2px;\n    font-size: x-large;\n    padding: 8px 0px 0px 10px;\n}\n.pad-me[data-v-3bb4aec2] {\n    margin-left: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.main-header[data-v-3bb4aec2] {\n    height: 50px;\n}\ni[data-v-3bb4aec2] {\n    font-size: xx-large;\n}\n\n", ""]);
 
 // exports
 
@@ -30775,69 +30794,106 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
-      _c("nav", { staticClass: "navbar navbar-color fixed-top " }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-xs-4 col-md-2 col-sm-2 top-left" }, [
-              _c("li", { staticClass: "dropdown" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row main-header" }, [
+          _c("div", { staticClass: "col-2 bg-primary" }, [
+            _c("ul", { staticClass: "nav nav-pills" }, [
+              _c("li", { staticClass: "nav-item " }, [
                 _c(
                   "a",
-                  {
-                    staticClass: "dropdown-toggle",
-                    attrs: { "data-toggle": "dropdown", href: "#" }
-                  },
+                  { staticClass: "nav-link active", attrs: { href: "#" } },
                   [
                     _c("i", { staticClass: "far fa-user" }),
                     _vm._v(" "),
-                    _c("ul", { staticClass: "dropdown-menu" }, [
-                      _c("li", [_vm._v("1")])
+                    _c("sub", [
+                      _c("span", { staticClass: "badge badge-dark" }, [
+                        _vm._v("4")
+                      ])
                     ])
                   ]
                 )
               ])
-            ]),
-            _vm._v(" "),
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-2 bg-primary" }, [
+            _c("ul", { staticClass: "nav nav-pills" }, [
+              _c("li", { staticClass: "nav-item " }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link active", attrs: { href: "#" } },
+                  [
+                    _c("i", { staticClass: "far fa-envelope" }),
+                    _vm._v(" "),
+                    _c("sub", [
+                      _c("span", { staticClass: "badge badge-dark" }, [
+                        _vm._v("4")
+                      ])
+                    ])
+                  ]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-2 bg-primary" }, [
+            _c("ul", { staticClass: "nav nav-pills" }, [
+              _c("li", { staticClass: "nav-item " }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link active", attrs: { href: "#" } },
+                  [
+                    _c("i", { staticClass: "fas fa-tasks" }),
+                    _vm._v(" "),
+                    _c("sub", [
+                      _c("span", { staticClass: "badge badge-dark" }, [
+                        _vm._v("4")
+                      ])
+                    ])
+                  ]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-4 bg-primary float-right" }, [
             _c(
-              "div",
-              { staticClass: "col-xs-4 col-md-2 col-sm-2 pad-me top-left" },
+              "form",
+              {
+                staticClass: "form-inline my-sm-2 float-right",
+                attrs: { action: "" }
+              },
               [
-                _c("li", { staticClass: "dropdown" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "dropdown-toggle",
-                      attrs: { "data-toggle": "dropdown", href: "#" }
-                    },
-                    [
-                      _c("i", { staticClass: "far fa-envelope" }),
-                      _vm._v(" "),
-                      _c("ul", [_c("li", [_vm._v("1")])])
-                    ]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-xs-4 col-md-2 col-sm-2 pad-me top-left" },
-              [
-                _c("li", { staticClass: "dropdown" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "dropdown-toggle",
-                      attrs: { "data-toggle": "dropdown", href: "#" }
-                    },
-                    [
-                      _c("i", { staticClass: "fas fa-tasks" }),
-                      _vm._v(" "),
-                      _c("ul", [_c("li", [_vm._v("1")])])
-                    ]
-                  )
-                ])
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-sm  btn-dark float-right",
+                    attrs: { type: "submit" }
+                  },
+                  [_vm._v("جستجو شود")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control ml-sm-2 input-lg float-right ",
+                  attrs: { type: "text" }
+                })
               ]
             )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-2 bg-primary float-right" }, [
+            _c("ul", { staticClass: "nav nav-pills float-right " }, [
+              _c("li", { staticClass: "nav-item float-right" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link active float-right",
+                    attrs: { href: "#" }
+                  },
+                  [_c("i", { staticClass: "fab fa-windows float-right" })]
+                )
+              ])
+            ])
           ])
         ])
       ])

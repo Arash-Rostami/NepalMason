@@ -1,43 +1,62 @@
 <template>
     <div>
-        <nav class="navbar navbar-color fixed-top ">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-4 col-md-2 col-sm-2 top-left">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <div class="container-fluid">
+            <div class="row main-header">
+                <div class="col-2 bg-primary">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="#">
                                 <i class="far fa-user"></i>
-                                <ul class="dropdown-menu">
-                                    <li>1</li>
-                                </ul>
+                                <sub>
+                                    <span class="badge badge-dark">4</span>
+                                </sub>
                             </a>
                         </li>
-                    </div>
-                    <div class="col-xs-4 col-md-2 col-sm-2 pad-me top-left">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    </ul>
+                </div>
+                <div class="col-2 bg-primary">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="#">
                                 <i class="far fa-envelope"></i>
-                                <ul>
-                                    <li>1</li>
-                                </ul>
+                                <sub>
+                                    <span class="badge badge-dark">4</span>
+                                </sub>
                             </a>
                         </li>
-                    </div>
-                    <div class="col-xs-4 col-md-2 col-sm-2 pad-me top-left">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    </ul>
+                </div>
+                <div class="col-2 bg-primary">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="#">
                                 <i class="fas fa-tasks"></i>
-                                <ul>
-                                    <li>1</li>
-                                </ul>
+                                <sub>
+                                    <span class="badge badge-dark">4</span>
+                                </sub>
                             </a>
                         </li>
-                    </div>
-
-
+                    </ul>
+                </div>
+                <div class="col-4 bg-primary float-right">
+                    <form class="form-inline my-sm-2 float-right" action="">
+                        <button class="btn btn-sm  btn-dark float-right" type="submit">جستجو شود</button>
+                        <input class="form-control ml-sm-2 input-lg float-right " type="text">
+                    </form>
+                </div>
+                <div class="col-2 bg-primary float-right">
+                    <ul class="nav nav-pills float-right ">
+                        <li class="nav-item float-right">
+                            <a class="nav-link active float-right" href="#">
+                                <i class="fab fa-windows float-right"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </nav>
+
+        </div>
+
     </div>
 
 </template>
@@ -52,34 +71,12 @@
     }
 </script>
 <style scoped>
-    li {
-        list-style: none;
+    .main-header {
+        height: 50px;
     }
 
-    .top-left {
-        float: left;
+    i {
+        font-size: xx-large;
     }
 
-    .navbar-color {
-        background-color: #8CD9DE;
-        border-color: #8CD9DE;
-        color: black;
-        height: 55px;
-        border-right: 2px solid #0C9A9A;
-    }
-
-    .dropdown-toggle i {
-        width: 43px;
-        height: 44px;
-        border-radius: 100%;
-        color: #164aa9;
-        background-color: #f5e9e9;
-        margin-top: 2px;
-        font-size: x-large;
-        padding: 8px 0px 0px 10px;
-    }
-
-    .pad-me {
-        margin-left: 20px;
-    }
 </style>
