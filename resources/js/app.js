@@ -2,11 +2,11 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import headrpanel from './components/HeaderPanel';
-import statspanel from './components/StatusPanel';
-import commenpanel from './components/CommentPanel';
-import ordrpanel from './components/OrderPanel';
-import footrpanel from './components/FooterPanel';
+import headrpanel from './components/adminpanel/HeaderPanel';
+import statspanel from './components/adminpanel/StatusPanel';
+import commenpanel from './components/adminpanel/CommentPanel';
+import ordrpanel from './components/adminpanel/OrderPanel';
+import footrpanel from './components/adminpanel/FooterPanel';
 
 
 
