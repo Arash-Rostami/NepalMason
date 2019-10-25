@@ -11100,7 +11100,14 @@ a.text-dark:focus {
   }
 }
 
+@font-face {
+  font-family: "BYekan";
+  src: url(/fonts/BYekan.eot?7449863a7fc414e1f4d5b1634ceaf1a6) format("eot");
+  src: url(/fonts/BYekan.woff?d7b709263103c998c712e1395fc27936) format("woff");
+}
+
 body {
   background-color: #C4E0EB;
+  font-family: "BYekan";
 }
 

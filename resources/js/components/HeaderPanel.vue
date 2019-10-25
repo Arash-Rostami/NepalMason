@@ -64,7 +64,7 @@
 <script>
 
     export default {
-        name: 'navbarManager',
+        name: 'headrpanel',
         mounted() {
             console.log('Component mounted now again.')
         }
@@ -78,5 +78,7 @@
     i {
         font-size: xx-large;
     }
-
+    span{
+        font-size: small;
+    }
 </style>

@@ -14,8 +14,11 @@
     <div id="app">
 
         <div>
-
-        <manager></manager>
+            <headrpanel></headrpanel>
+            <statspanel></statspanel>
+            <commenpanel></commenpanel>
+            <ordrpanel></ordrpanel>
+            <footrpanel></footrpanel>
         </div>
 
     </div>
