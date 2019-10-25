@@ -15,6 +15,7 @@
 
         <div>
             <headrpanel></headrpanel>
+            <sidemenpanel></sidemenpanel>
             <statspanel></statspanel>
             <commenpanel></commenpanel>
             <ordrpanel></ordrpanel>
@@ -24,6 +25,7 @@
     </div>
 
     <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
+
 </body>
 
 

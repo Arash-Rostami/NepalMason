@@ -48,7 +48,7 @@
                     <ul class="nav nav-pills float-right ">
                         <li class="nav-item float-right">
                             <a class="nav-link active float-right" href="#">
-                                <i class="fab fa-windows float-right"></i>
+                                <i class="fab fa-windows float-right" @click="openNav"></i>
                             </a>
                         </li>
                     </ul>
@@ -67,6 +67,11 @@
         name: 'headrpanel',
         mounted() {
             console.log('Component mounted now again.')
+        },
+        methods:{
+            openNav: ()=>{
+                document.getElementById("mySidenav").style.width = "250px";
+            }
         }
     }
 </script>

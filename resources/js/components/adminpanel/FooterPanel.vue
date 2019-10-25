@@ -21,6 +21,7 @@
     .page-footer{
         height: 32px;
         background-color: #007BFF;
+        margin-top: 50px;
     }
 
 </style>

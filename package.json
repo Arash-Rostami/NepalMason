@@ -41,6 +41,9 @@
     "@fortawesome/vue-fontawesome": "^0.1.7",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
+    "popper": "^1.0.1",
+    "popper.js": "^1.16.0",
+    "ui": "^0.2.4",
     "vue": "^2.6.10"
   }
 }

@@ -46,6 +46,7 @@
     .container-fluid {
         margin-top: 50px;
         background-color: white;
+        margin-bottom: 100px!important;
     }
     .table  {
         direction: rtl;
