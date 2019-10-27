@@ -1,6 +1,7 @@
 // Variables
 @import '_variables';
 
+
 @font-face {
   font-family: $BYekan;
   src:url($font-path-eot) format('eot');
@@ -9,7 +10,15 @@
 body{
   background-color: $body-bg;
   font-family: $BYekan;
-  }
+}
+.navbar{
+  background-color: $navbar;
+}
+.cardHead{
+  direction: $right;
+  background-color: $navbar;
+}
+
 
 
 

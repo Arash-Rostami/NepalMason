@@ -20,7 +20,7 @@
 <style scoped>
     .page-footer{
         height: 32px;
-        background-color: #007BFF;
+        background-color: #3490DC;
         margin-top: 50px;
     }
 

@@ -6718,7 +6718,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.page-footer[data-v-067ce69a]{\n    height: 32px;\n    background-color: #007BFF;\n    margin-top: 50px;\n}\n\n", ""]);
+exports.push([module.i, "\n.page-footer[data-v-067ce69a]{\n    height: 32px;\n    background-color: #3490DC;\n    margin-top: 50px;\n}\n\n", ""]);
 
 // exports
 

@@ -11111,3 +11111,12 @@ body {
   font-family: "BYekan";
 }
 
+.navbar {
+  background-color: #3490DC;
+}
+
+.cardHead {
+  direction: ltr;
+  background-color: #3490DC;
+}
+
