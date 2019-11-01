@@ -10,4 +10,9 @@ class AttributeItem extends Model
     {
         return $this->belongsToMany('App/Product');
     }
+
+    public function attribute()
+    {
+        return $this->belongsTo('App/Attribute');
+    }
 }

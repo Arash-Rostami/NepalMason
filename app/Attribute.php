@@ -10,8 +10,15 @@ class Attribute extends Model
     {
         return $this->belongsToMany('App/Product');
     }
-    public function groups()
+
+    public function group()
     {
         return $this->belongsTo('App/Group');
+    }
+
+    public function attributeItems()
+    {
+        return $this->hasMany('App/AttributeIem');
+
     }
 }

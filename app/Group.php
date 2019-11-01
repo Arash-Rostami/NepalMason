@@ -6,12 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model
 {
-    public function categories()
+    public function category()
     {
-        return $this->belongsTo('App/Category');
+        return $this->hasOne('App/Category');
     }
+
     public function attributes()
     {
         return $this->hasMany('App/Attribute');
+    }
+
+    public function size()
+    {
+        return $this->belongsTo('App/Size');
     }
 }

@@ -10,11 +10,13 @@ class Order extends Model
     {
         return $this->belongsToMany('App/User');
     }
+
     public function products()
     {
         return $this->belongsToMany('App/Product');
     }
-    public function categories()
+
+    public function category()
     {
         return $this->hasOne('App/Category');
     }

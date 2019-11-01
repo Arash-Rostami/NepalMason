@@ -12,10 +12,12 @@ class City extends Model
     {
         return $this->hasMany('App/User');
     }
+
     public function companies()
     {
         return $this->hasMany('App/Company');
     }
+
     public function addresses()
     {
         return $this->hasMany('App/Address');

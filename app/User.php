@@ -10,14 +10,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
-        'name', 'email', 'password','lname', 'idcode', 'phone','gender', 'birthdate', 'accountno','city_id',
+        'name', 'email', 'password', 'lname', 'idcode', 'phone', 'gender', 'birthdate', 'accountno', 'city_id',
 
     ];
 
@@ -44,18 +38,22 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App/Order');
     }
-    public function cities()
+
+    public function city()
     {
         return $this->belongsTo('App/City');
     }
+
     public function companies()
     {
         return $this->hasMany('App/Company');
     }
+
     public function addresses()
     {
         return $this->hasMany('App/Address');
     }
+
     public function comments()
     {
         return $this->hasMany('App/Comment');

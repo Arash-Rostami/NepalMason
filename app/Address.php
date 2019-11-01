@@ -8,11 +8,12 @@ class Address extends Model
 {
     protected $table = 'addresses';
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo('App/User');
     }
-    public function cities()
+
+    public function city()
     {
         return $this->belongsTo('App/City');
     }

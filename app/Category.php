@@ -8,17 +8,19 @@ class Category extends Model
 {
     protected $table = 'categories';
 
-    public function orders()
+    public function order()
     {
         return $this->belongsTo('App/Order');
     }
-    public function products()
+
+    public function product()
     {
         return $this->belongsTo('App/Product');
     }
-    public function groups()
+
+    public function group()
     {
-        return $this->hasMany('App/Group');
+        return $this->belongsTo('App/Group');
     }
 
 }
