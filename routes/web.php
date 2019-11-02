@@ -16,6 +16,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin'], function(){
     Route::get('index', 'AdminController@index');
+    Route::resource('category', 'CategoryController');
+
+
 
 });
 

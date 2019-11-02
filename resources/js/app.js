@@ -25,13 +25,18 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+// VUE COMPONENTS OF ADMINPANEL
 import headrpanel from './components/adminpanel/HeaderPanel';
 import statspanel from './components/adminpanel/StatusPanel';
 import commenpanel from './components/adminpanel/CommentPanel';
 import ordrpanel from './components/adminpanel/OrderPanel';
 import footrpanel from './components/adminpanel/FooterPanel';
 import sidemenpanel from './components/adminpanel/SideMenuPanel';
+
+// VUE COMPONENTS OF ADMINUPLOAD
+
+import categrycreate from './components/adminupload/CategoryCreate';
+
 
 
 
@@ -47,7 +52,9 @@ new Vue({
         commenpanel,
         ordrpanel,
         footrpanel,
-        sidemenpanel
+        sidemenpanel,
+        categrycreate
 
     }
+
 });
