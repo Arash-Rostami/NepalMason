@@ -11120,3 +11120,7 @@ body {
   background-color: #3490DC;
 }
 
+.dir {
+  direction: rtl;
+}
+

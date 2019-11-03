@@ -4,5 +4,5 @@
 
     <headrpanel></headrpanel>
     <sidemenpanel></sidemenpanel>
-    <categrycreate></categrycreate>
+    <categrycreate parentcategory="{{ $parents }}"> </categrycreate>
 @stop

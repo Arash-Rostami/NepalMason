@@ -19,6 +19,8 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('categrycreate', require('./components/adminupload/CategoryCreate').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -35,7 +37,7 @@ import sidemenpanel from './components/adminpanel/SideMenuPanel';
 
 // VUE COMPONENTS OF ADMINUPLOAD
 
-import categrycreate from './components/adminupload/CategoryCreate';
+//import categrycreate from './components/adminupload/CategoryCreate';
 
 
 
@@ -53,7 +55,7 @@ new Vue({
         ordrpanel,
         footrpanel,
         sidemenpanel,
-        categrycreate
+       // categrycreate
 
     }
 

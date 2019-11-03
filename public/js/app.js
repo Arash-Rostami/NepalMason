@@ -2295,8 +2295,15 @@ __webpack_require__.r(__webpack_exports__);
   name: "CategoryCreate",
   data: function data() {
     return {
-      title: ""
+      title: "",
+      objects: [],
+      catname: "",
+      select: []
     };
+  },
+  props: ['parentcategory'],
+  created: function created() {
+    this.objects = JSON.parse(this.parentcategory);
   },
   methods: {
     mCat: function mCat() {
@@ -2304,6 +2311,18 @@ __webpack_require__.r(__webpack_exports__);
         title: this.title
       }).then(function () {
         alert(" ".concat(this.title, "\n                                            \u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u0628\u0627\u0631\u06AF\u0630\u0627\u0631\u06CC \u0634\u062F"));
+        location.reload(true);
+      }.bind(this))["catch"](function (error) {
+        alert(error);
+      });
+    },
+    Cat: function Cat() {
+      axios.post('./category', {
+        catname: this.catname,
+        parentid: this.select
+      }).then(function () {
+        alert(" ".concat(this.catname, "\n                                            \u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u0628\u0627\u0631\u06AF\u0630\u0627\u0631\u06CC \u0634\u062F"));
+        location.reload(true);
       }.bind(this))["catch"](function (error) {
         alert(error);
       });
@@ -6884,7 +6903,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.dir[data-v-1835e8b8] {\n    direction: rtl !important;\n    margin-top: 7%;\n}\n\n\n", ""]);
+exports.push([module.i, "\n.dir[data-v-1835e8b8] {\n    direction: rtl !important;\n    margin-top: 7%;\n}\n\n", ""]);
 
 // exports
 
@@ -39230,7 +39249,6 @@ var render = function() {
                 attrs: {
                   type: "text",
                   name: "title",
-                  id: "",
                   "aria-describedby": "helpId",
                   placeholder: "نام دسته مادر را وارد نمایید"
                 },
@@ -39257,9 +39275,92 @@ var render = function() {
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
-          _vm._m(1),
+          _c("div", { staticClass: "col-4" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "name" } }, [_vm._v("زیر دسته ")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.catname,
+                    expression: "catname"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  name: "cat",
+                  "aria-describedby": "helpId",
+                  placeholder: "نام زبر دسته را وارد نمایید"
+                },
+                domProps: { value: _vm.catname },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.catname = $event.target.value
+                  }
+                }
+              })
+            ])
+          ]),
           _vm._v(" "),
-          _vm._m(2)
+          _c("div", { staticClass: "col-4" }, [
+            _c("label", { attrs: { for: "parent_id" } }, [
+              _vm._v("انتخاب دسته ")
+            ]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.select,
+                    expression: "select"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { name: "parent_id" },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.select = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              _vm._l(_vm.objects, function(object) {
+                return _c("option", { domProps: { value: object.id } }, [
+                  _vm._v(
+                    "\n                            " +
+                      _vm._s(object.name) +
+                      "\n                        "
+                  )
+                ])
+              }),
+              0
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "btn btn-primary",
+              attrs: { type: "submit", value: "ایجاد دسته " },
+              on: { click: _vm.Cat }
+            })
+          ])
         ])
       ])
     ])
@@ -39272,47 +39373,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header text-center" }, [
       _c("h3", [_vm._v(" ایجاد دسته")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-4" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", { attrs: { for: "name" } }, [_vm._v("زیر دسته ")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: {
-            type: "text",
-            name: "name",
-            id: "",
-            "aria-describedby": "helpId",
-            placeholder: "نام زبر دسته را وارد نمایید"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-4" }, [
-      _c("label", { attrs: { for: "parent_id" } }, [_vm._v("انتخاب دسته ")]),
-      _vm._v(" "),
-      _c(
-        "select",
-        { staticClass: "form-control", attrs: { name: "parent_id", id: "" } },
-        [_c("option", { attrs: { value: "1" } }, [_vm._v("دسته مادر")])]
-      ),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "btn btn-primary",
-        attrs: { type: "submit", value: "ایجاد دسته " }
-      })
     ])
   }
 ]
@@ -51473,7 +51533,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_adminpanel_OrderPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/adminpanel/OrderPanel */ "./resources/js/components/adminpanel/OrderPanel.vue");
 /* harmony import */ var _components_adminpanel_FooterPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/adminpanel/FooterPanel */ "./resources/js/components/adminpanel/FooterPanel.vue");
 /* harmony import */ var _components_adminpanel_SideMenuPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/adminpanel/SideMenuPanel */ "./resources/js/components/adminpanel/SideMenuPanel.vue");
-/* harmony import */ var _components_adminupload_CategoryCreate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/adminupload/CategoryCreate */ "./resources/js/components/adminupload/CategoryCreate.vue");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -51493,6 +51552,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component('categrycreate', __webpack_require__(/*! ./components/adminupload/CategoryCreate */ "./resources/js/components/adminupload/CategoryCreate.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -51506,7 +51566,7 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 
 
  // VUE COMPONENTS OF ADMINUPLOAD
-
+//import categrycreate from './components/adminupload/CategoryCreate';
 
 new Vue({
   el: '#app',
@@ -51516,8 +51576,8 @@ new Vue({
     commenpanel: _components_adminpanel_CommentPanel__WEBPACK_IMPORTED_MODULE_2__["default"],
     ordrpanel: _components_adminpanel_OrderPanel__WEBPACK_IMPORTED_MODULE_3__["default"],
     footrpanel: _components_adminpanel_FooterPanel__WEBPACK_IMPORTED_MODULE_4__["default"],
-    sidemenpanel: _components_adminpanel_SideMenuPanel__WEBPACK_IMPORTED_MODULE_5__["default"],
-    categrycreate: _components_adminupload_CategoryCreate__WEBPACK_IMPORTED_MODULE_6__["default"]
+    sidemenpanel: _components_adminpanel_SideMenuPanel__WEBPACK_IMPORTED_MODULE_5__["default"] // categrycreate
+
   }
 });
 
