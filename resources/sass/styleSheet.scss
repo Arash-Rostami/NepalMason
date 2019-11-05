@@ -21,6 +21,9 @@ body{
 .dir{
   direction: $left;
 }
+.swal-overlay {
+  background-color: $body-bg;
+}
 
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ParentCategory;
 use App\Category;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CategoryController extends Controller
 {
@@ -17,6 +18,8 @@ class CategoryController extends Controller
     {
         $parents = ParentCategory::all();
         return view('admin.category', compact('parents'));
+
+
     }
 
     /**
@@ -41,6 +44,7 @@ class CategoryController extends Controller
         if ($name = $request->title) {
             $parentcat = new ParentCategory(['name' => $name]);
             $parentcat->save();
+           flashMessage('با موفقیت', "   ذخیره گردید{$name}    ", 'success');
 
         }
 
@@ -48,6 +52,9 @@ class CategoryController extends Controller
             $id = $request->parentid;
             $category = new Category(['name' => $catname, 'parent_id' => $id]);
             $category->save();
+            flashMessage('با موفقیت', "   ذخیره گردید{$catname}    ", 'success');
+
+
         }
 
 

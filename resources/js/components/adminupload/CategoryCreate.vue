@@ -39,7 +39,7 @@
 </template>
 
 <script>
-
+    //import Swal from 'sweetalert2';
     export default {
         name: "CategoryCreate",
         data() {
@@ -60,8 +60,17 @@
                     title: this.title,
                 })
                     .then(function () {
-                        alert(` ${this.title}
-                                                با موفقیت بارگذاری شد`);
+                        // Swal.fire({
+                        //     type: 'success',
+                        //     title: ` ${this.title}
+                        //                         با موفقیت بارگذاری شد`,
+                        //     showConfirmButton: false,
+                        //     timer: 2500,
+                        //     animation: false,
+                        //     customClass: {
+                        //         popup: 'animated tada'
+                        //     }
+                        // });
                         location.reload(true);
                     }.bind(this))
                     .catch(function (error) {
@@ -74,8 +83,17 @@
                     parentid: this.select,
                 })
                     .then(function () {
-                        alert(` ${this.catname}
-                                                با موفقیت بارگذاری شد`);
+                        // Swal.fire({
+                        //     type: 'success',
+                        //     title: ` ${this.catname}
+                        //                         با موفقیت بارگذاری شد`,
+                        //     showConfirmButton: false,
+                        //     timer: 2500,
+                        //     animation: false,
+                        //     customClass: {
+                        //         popup: 'animated tada'
+                        //     }
+                        // });
                         location.reload(true);
                     }.bind(this))
                     .catch(function (error) {
@@ -85,11 +103,9 @@
         }
     }
 </script>
-
 <style scoped>
     .dir {
         direction: rtl !important;
         margin-top: 7%;
     }
-
 </style>
