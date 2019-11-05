@@ -27,7 +27,7 @@ class Category extends Model
         return $this->belongsTo('App/Group');
     }
 
-    public function parent()
+    public function parentCategory()
     {
         return $this->belongsTo('App/ParentCategory');
     }

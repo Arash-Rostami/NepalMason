@@ -17,7 +17,10 @@ class CategoryController extends Controller
     public function index()
     {
         $parents = ParentCategory::all();
-        return view('admin.category', compact('parents'));
+        $category = Category::all();
+        return view('admin.category')
+            ->with('parents', $parents)
+            ->with('categories', $category);
 
 
     }
@@ -44,7 +47,7 @@ class CategoryController extends Controller
         if ($name = $request->title) {
             $parentcat = new ParentCategory(['name' => $name]);
             $parentcat->save();
-           flashMessage('با موفقیت', "   ذخیره گردید{$name}    ", 'success');
+            flashMessage('با موفقیت', "{$name}   ذخیره گردید    ", 'success');
 
         }
 
@@ -52,7 +55,7 @@ class CategoryController extends Controller
             $id = $request->parentid;
             $category = new Category(['name' => $catname, 'parent_id' => $id]);
             $category->save();
-            flashMessage('با موفقیت', "   ذخیره گردید{$catname}    ", 'success');
+            flashMessage('با موفقیت', "{$catname}  ذخیره گردید  ", 'success');
 
 
         }

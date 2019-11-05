@@ -3,9 +3,22 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header text-center">
-                    <h3> ایجاد دسته</h3>
+                    <h3> ایجاد دسته ها</h3>
                 </div>
                 <div class="card-body text-right">
+                    <div class="col-4">
+                        <ul id="myUL">
+                            <li v-for="pCategory in pCategories" @click="toggleNest">
+                                <span class="caret"> {{ pCategory.name }}</span>
+                                <ul class="nested text-primary">
+                                    <li v-for="mCategory in mCategories" v-if="pCategory.id == mCategory.parent_id">
+                                        {{ mCategory.name }}
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
                     <div class="col-4">
                         <div class="form-group">
                             <label for=""> دسته مادر </label>
@@ -25,8 +38,8 @@
                     <div class="col-4">
                         <label for="parent_id">انتخاب دسته </label>
                         <select class="form-control" name="parent_id" v-model="select">
-                            <option v-for="object in objects" :value="object.id">
-                                {{ object.name }}
+                            <option v-for="pCategory in pCategories" :value="pCategory.id">
+                                {{ pCategory.name }}
                             </option>
                         </select><br>
                         <input type="submit" value="ایجاد دسته " class="btn btn-primary" @click="Cat">
@@ -45,16 +58,31 @@
         data() {
             return {
                 title: "",
-                objects: [],
+                pCategories: [],
                 catname: "",
-                select: []
+                select: [],
+                mCategories: []
             }
         },
-        props: ['parentcategory'],
+        props: [
+            'parentcategory',
+            'maincategory',
+        ],
         created() {
-            this.objects = JSON.parse(this.parentcategory);
+            this.pCategories = JSON.parse(this.parentcategory);
+            this.mCategories = JSON.parse(this.maincategory);
         },
         methods: {
+            toggleNest() {
+                var toggler = document.getElementsByClassName("caret");
+                var i;
+                for (i = 0; i < toggler.length; i++) {
+                    toggler[i].addEventListener("click", function () {
+                        this.parentElement.querySelector(".nested").classList.toggle("active");
+                        this.classList.toggle("caret-down");
+                    });
+                }
+            },
             mCat() {
                 axios.post('./category', {
                     title: this.title,
@@ -107,5 +135,41 @@
     .dir {
         direction: rtl !important;
         margin-top: 7%;
+    }
+
+    ul, #myUL {
+        list-style-type: none;
+    }
+
+    #myUL {
+        margin: 0;
+        padding: 0;
+    }
+
+    .caret {
+        cursor: pointer;
+        font-size: large;
+        /* ser-select: none;  Prevent text selection */
+    }
+
+    .caret::before {
+        content: "\23F4";
+        color: #C4E0EB;
+        display: inline-block;
+        margin-left: 6px;
+    }
+
+    .caret-down::before {
+        transform: rotate(270deg);
+    }
+
+    .nested {
+        display: none;
+        color: #C4E0EB;
+        margin-right: 6px;
+    }
+
+    .active {
+        display: block;
     }
 </style>

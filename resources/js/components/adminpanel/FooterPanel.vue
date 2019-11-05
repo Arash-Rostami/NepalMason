@@ -1,13 +1,13 @@
 <template>
-    <div>
-    <footer class="page-footer font-small fixed-bottom">
+    <div class="page-footer ">
+        <footer class="page-footer font-small fixed-bottom">
 
-        <div class="footer-copyright text-center py-1" title="Arash Rostami">Designed & Developed by LaraVue©
+            <div class="footer-copyright text-center py-1" title="Arash Rostami">Designed & Developed by LaraVue©
 
-        </div>
+            </div>
 
 
-    </footer>
+        </footer>
     </div>
 </template>
 
@@ -18,7 +18,7 @@
 </script>
 
 <style scoped>
-    .page-footer{
+    .page-footer {
         height: 32px;
         background-color: #3490DC;
         margin-top: 50px;
