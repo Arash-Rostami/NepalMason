@@ -2304,6 +2304,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //import Swal from 'sweetalert2';
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CategoryCreate",
@@ -2313,7 +2324,8 @@ __webpack_require__.r(__webpack_exports__);
       pCategories: [],
       catname: "",
       select: [],
-      mCategories: []
+      mCategories: [],
+      delt: []
     };
   },
   props: ['parentcategory', 'maincategory'],
@@ -2353,22 +2365,52 @@ __webpack_require__.r(__webpack_exports__);
         alert(error);
       });
     },
+    DelCat: function DelCat() {
+      var _this = this;
+
+      swal({
+        title: "آیا اطمینان دارید؟",
+        text: "تمامی دسته و فایلهای زیر دسته هم پاک خواهند شد",
+        icon: "warning",
+        buttons: {
+          cancel: {
+            text: "خیر",
+            value: false,
+            visible: true,
+            closeModal: true
+          },
+          confirm: {
+            text: "بلی",
+            value: true,
+            visible: true,
+            closeModal: true
+          }
+        }
+      }).then(function (willDelete) {
+        if (willDelete) {
+          axios["delete"]("./category/".concat(_this.delt), {
+            id: _this.delt
+          }).then(function () {
+            location.reload(true);
+          }.bind(_this))["catch"](function (error) {
+            alert(error);
+          });
+        } else {
+          swal({
+            buttons: false,
+            title: "انصراف",
+            text: "دسته محفوظ میباشد",
+            icon: "error",
+            timer: 3000
+          });
+        }
+      });
+    },
     Cat: function Cat() {
       axios.post('./category', {
         catname: this.catname,
         parentid: this.select
       }).then(function () {
-        // Swal.fire({
-        //     type: 'success',
-        //     title: ` ${this.catname}
-        //                         با موفقیت بارگذاری شد`,
-        //     showConfirmButton: false,
-        //     timer: 2500,
-        //     animation: false,
-        //     customClass: {
-        //         popup: 'animated tada'
-        //     }
-        // });
         location.reload(true);
       }.bind(this))["catch"](function (error) {
         alert(error);
@@ -39315,7 +39357,9 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "col-4" }, [
             _c("div", { staticClass: "form-group" }, [
-              _c("label", { attrs: { for: "" } }, [_vm._v(" دسته مادر ")]),
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v(" ایجاد دسته مادر ")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -39350,6 +39394,62 @@ var render = function() {
                 staticClass: "btn btn-info",
                 attrs: { type: "submit", value: "ایجاد دسته مادر" },
                 on: { click: _vm.mCat }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-4" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "" } }, [_vm._v(" حذف دسته مادر ")]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.delt,
+                      expression: "delt"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { name: "parent_id" },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.delt = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
+                  }
+                },
+                _vm._l(_vm.pCategories, function(pCategory) {
+                  return _c("option", { domProps: { value: pCategory.id } }, [
+                    _vm._v(
+                      "\n                                " +
+                        _vm._s(pCategory.name) +
+                        "\n                            "
+                    )
+                  ])
+                }),
+                0
+              ),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "btn btn-danger",
+                attrs: { type: "submit", value: "حذف دسته " },
+                on: { click: _vm.DelCat }
               })
             ])
           ]),

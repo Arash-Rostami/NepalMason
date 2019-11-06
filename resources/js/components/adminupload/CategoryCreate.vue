@@ -21,10 +21,22 @@
                     <hr>
                     <div class="col-4">
                         <div class="form-group">
-                            <label for=""> دسته مادر </label>
+                            <label for=""> ایجاد دسته مادر </label>
                             <input type="text" class="form-control" name="title" aria-describedby="helpId"
                                    placeholder="نام دسته مادر را وارد نمایید" v-model="title"> <br>
                             <input type="submit" value="ایجاد دسته مادر" class="btn btn-info" @click="mCat">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for=""> حذف دسته مادر </label>
+                            <select class="form-control" name="parent_id" v-model="del">
+                                <option v-for="pCategory in pCategories" :value="pCategory.id">
+                                    {{ pCategory.name }}
+                                </option>
+                            </select><br>
+                            <input type="submit" value="حذف دسته " class="btn btn-danger" @click="DelCat">
                         </div>
                     </div>
                     <hr>
@@ -43,7 +55,6 @@
                             </option>
                         </select><br>
                         <input type="submit" value="ایجاد دسته " class="btn btn-primary" @click="Cat">
-
                     </div>
                 </div>
             </div>
@@ -61,7 +72,8 @@
                 pCategories: [],
                 catname: "",
                 select: [],
-                mCategories: []
+                mCategories: [],
+                del: [],
             }
         },
         props: [
@@ -105,23 +117,53 @@
                         alert(error);
                     });
             },
+            DelCat() {
+                swal({
+                    title: "آیا اطمینان دارید؟",
+                    text: "تمامی دسته و فایلهای زیر دسته هم پاک خواهند شد",
+                    icon: "warning",
+                    buttons: {
+                        cancel: {
+                            text: "خیر",
+                            value: false,
+                            visible: true,
+                            closeModal: true,
+                        },
+                        confirm: {
+                            text: "بلی",
+                            value: true,
+                            visible: true,
+                            closeModal: true
+                        }
+                    }
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            axios.delete(`./category/${this.del}`, {
+                                id: this.del,
+                            }).then(function () {
+                                location.reload(true);
+                            }.bind(this))
+                                .catch(function (error) {
+                                    alert(error);
+                                });
+                        } else {
+                            swal({
+                                buttons: false,
+                                title: "انصراف",
+                                text: "دسته محفوظ میباشد",
+                                icon: "error",
+                                timer: 3000
+                            });
+                        }
+                    });
+            },
             Cat() {
                 axios.post('./category', {
                     catname: this.catname,
                     parentid: this.select,
                 })
                     .then(function () {
-                        // Swal.fire({
-                        //     type: 'success',
-                        //     title: ` ${this.catname}
-                        //                         با موفقیت بارگذاری شد`,
-                        //     showConfirmButton: false,
-                        //     timer: 2500,
-                        //     animation: false,
-                        //     customClass: {
-                        //         popup: 'animated tada'
-                        //     }
-                        // });
                         location.reload(true);
                     }.bind(this))
                     .catch(function (error) {
