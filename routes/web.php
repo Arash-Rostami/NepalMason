@@ -18,6 +18,11 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('index', 'AdminController@index');
     Route::resource('category', 'CategoryController');
 
+    Route::resource('product', 'ProductController');
+    Route::post('group', 'GroupController@store');
+
+
+
 
 
 });

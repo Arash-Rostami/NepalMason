@@ -6,6 +6,7 @@
 
 require('./bootstrap');
 require('./sweetAlert');
+require('./dropzone');
 
 
 
@@ -41,6 +42,8 @@ import sidemenpanel from './components/adminpanel/SideMenuPanel';
 // VUE COMPONENTS OF ADMINUPLOAD
 
 import categrycreate from './components/adminupload/CategoryCreate';
+import prodctcreate from './components/adminupload/ProductCreate';
+
 
 
 
@@ -58,8 +61,8 @@ new Vue({
         ordrpanel,
         footrpanel,
         sidemenpanel,
-       categrycreate
-
+        categrycreate,
+        prodctcreate
     }
 
 });

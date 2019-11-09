@@ -41,7 +41,6 @@ class CategoryController extends Controller
             $category->save();
             flashMessage('با موفقیت', "{$catname}  ذخیره گردید  ", 'success');
 
-
         }
 
 

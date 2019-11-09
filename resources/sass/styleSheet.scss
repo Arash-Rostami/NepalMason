@@ -4,26 +4,41 @@
 
 @font-face {
   font-family: $BYekan;
-  src:url($font-path-eot) format('eot');
-  src:url($font-path-wolf) format('woff');
+  src: url($font-path-eot) format('eot');
+  src: url($font-path-wolf) format('woff');
 }
-body{
+
+body {
   background-color: $body-bg;
   font-family: $BYekan;
 }
-.navbar{
+
+.navbar {
   background-color: $navbar;
 }
-.cardHead{
+
+.cardHead {
   direction: $right;
   background-color: $navbar;
 }
-.dir{
+
+.dir {
   direction: $left;
 }
+
 .swal-overlay {
   background-color: $body-bg;
 }
+
+.right {
+  direction: $right;
+}
+
+.left {
+  direction: $left;
+}
+
+
 
 
 

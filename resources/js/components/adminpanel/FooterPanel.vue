@@ -2,9 +2,9 @@
     <div class="page-footer ">
         <footer class="page-footer font-small fixed-bottom">
 
-            <div class="footer-copyright text-center py-1" title="Arash Rostami">Designed & Developed by LaraVue©
+            <p class="footer-copyright text-center py-1" title="Arash Rostami">Designed & Developed by LaraVue©
 
-            </div>
+            </p>
 
 
         </footer>
@@ -21,7 +21,7 @@
     .page-footer {
         height: 32px;
         background-color: #3490DC;
-        margin-top: 50px;
+        margin-top: 20px;
     }
 
 </style>
