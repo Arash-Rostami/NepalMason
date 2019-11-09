@@ -15,7 +15,5 @@ class GroupController extends Controller
             'name' => $request->name,
             'category_id' => $request->id,]);
         $group->save();
-       // flashMessage('با موفقیت', "{$request->name}  ذخیره گردید  ", 'success');
-
     }
 }

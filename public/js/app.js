@@ -2434,6 +2434,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue2_dropzone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue2_dropzone__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue2_dropzone_dist_vue2Dropzone_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue2-dropzone/dist/vue2Dropzone.min.css */ "./node_modules/vue2-dropzone/dist/vue2Dropzone.min.css");
 /* harmony import */ var vue2_dropzone_dist_vue2Dropzone_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue2_dropzone_dist_vue2Dropzone_min_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _myFunc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../myFunc */ "./resources/js/myFunc.js");
 //
 //
 //
@@ -2598,6 +2599,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2627,41 +2629,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     addGroup: function addGroup() {
-      (function () {
-        var btn = document.getElementById("btnAddGroup");
-        btn.setAttribute('value', " در حال ذخیره  ");
-        setTimeout(function () {
-          btn.setAttribute('value', " در حال ذخیره .");
-        }, 350);
-        setTimeout(function () {
-          btn.setAttribute('value', " در حال ذخیره ..");
-        }, 600);
-        setTimeout(function () {
-          btn.setAttribute('value', " در حال ذخیره ...");
-        }, 1000);
-        setTimeout(function () {
-          btn.setAttribute('value', " در حال ذخیره ....");
-        }, 1500);
-        setTimeout(function () {
-          btn.setAttribute('value', "  ذخیره ");
-        }, 2000);
-      })();
-
+      var btn = document.getElementById("btnAddGroup");
+      new _myFunc__WEBPACK_IMPORTED_MODULE_2__["myFunc"]().saving(btn);
       axios.post('./group', {
         id: this.selectGroup,
         name: this.nameGroup
       }).then(function () {
-        var self = this;
-        setTimeout(function () {
-          swal({
-            buttons: false,
-            title: "با موفقیت",
-            text: "".concat(self.nameGroup, " \u0630\u062E\u06CC\u0631\u0647 \u06AF\u0631\u062F\u06CC\u062F"),
-            icon: "success",
-            timer: 3000
-          });
-          location.reload(true);
-        }, 2500);
+        var message = this.nameGroup;
+        new _myFunc__WEBPACK_IMPORTED_MODULE_2__["myFunc"]().flash(message);
       }.bind(this))["catch"](function (error) {
         alert(error);
       });
@@ -40278,6 +40253,7 @@ var staticRenderFns = [
           })
         ])
       ]),
+      _vm._v(" "),
       _c("hr"),
       _vm._v(" "),
       _c("hr"),
@@ -57018,6 +56994,73 @@ function __guardMethod__(obj, methodName, transform) {
   }
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+
+/***/ }),
+
+/***/ "./resources/js/myFunc.js":
+/*!********************************!*\
+  !*** ./resources/js/myFunc.js ***!
+  \********************************/
+/*! exports provided: myFunc */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "myFunc", function() { return myFunc; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var myFunc =
+/*#__PURE__*/
+function () {
+  function myFunc() {
+    _classCallCheck(this, myFunc);
+  }
+
+  _createClass(myFunc, [{
+    key: "saving",
+    value: function saving(btn) {
+      btn.setAttribute('value', " در حال ذخیره  ");
+      setTimeout(function () {
+        btn.setAttribute('value', " در حال ذخیره .");
+      }, 350);
+      setTimeout(function () {
+        btn.setAttribute('value', " در حال ذخیره ..");
+      }, 600);
+      setTimeout(function () {
+        btn.setAttribute('value', " در حال ذخیره ...");
+      }, 1000);
+      setTimeout(function () {
+        btn.setAttribute('value', " در حال ذخیره ....");
+      }, 1500);
+      setTimeout(function () {
+        btn.setAttribute('value', "  ذخیره ");
+      }, 2000);
+    }
+  }, {
+    key: "flash",
+    value: function flash(self) {
+      setTimeout(function () {
+        swal({
+          buttons: false,
+          title: "با موفقیت",
+          text: "".concat(self, " \u0630\u062E\u06CC\u0631\u0647 \u06AF\u0631\u062F\u06CC\u062F"),
+          icon: "success",
+          timer: 3000
+        });
+        setTimeout(function () {
+          location.reload(true);
+        }, 3000);
+        location.reload(true);
+      }, 2500);
+    }
+  }]);
+
+  return myFunc;
+}();
 
 /***/ }),
 

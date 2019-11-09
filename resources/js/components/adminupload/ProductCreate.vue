@@ -25,7 +25,8 @@
                                     {{ mcategory.name }}
                                 </option>
                             </select><br>
-                            <input type="submit" id="btnAddGroup" value="ذخیره" class="btn btn-primary" @click="addGroup">
+                            <input type="submit" id="btnAddGroup" value="ذخیره" class="btn btn-primary"
+                                   @click="addGroup">
 
                         </div>
                         <hr>
@@ -98,7 +99,8 @@
                                         <br>
                                         <input type="submit" value="ذخیره" class="btn btn-primary">
                                     </div>
-                                </div><hr>
+                                </div>
+                                <hr>
                                 <hr>
                                 <div class="row">
                                     <div class="form-group col-md-6">
@@ -148,9 +150,7 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
-
-
+                        </div>
                     </div>
                 </div>
             </div>
@@ -165,6 +165,8 @@
 <script>
     import vue2Dropzone from 'vue2-dropzone'
     import 'vue2-dropzone/dist/vue2Dropzone.min.css'
+    import {myFunc} from "../../myFunc";
+
 
     export default {
         name: "ProductCreate",
@@ -172,7 +174,7 @@
             return {
                 mcategories: [],
                 nameGroup: "",
-                selectGroup:[],
+                selectGroup: [],
                 dropzoneOptions: {
                     url: 'https://httpbin.org/post',
                     thumbnailWidth: 150,
@@ -188,41 +190,25 @@
         props: [
             'maincategory',
         ],
-        created(){
+        created() {
             this.mcategories = JSON.parse(this.maincategory);
         },
         methods: {
-            addGroup: function(){
-                (function(){
-                    let btn= document.getElementById("btnAddGroup");
-                    btn.setAttribute('value', " در حال ذخیره  ");
-                    setTimeout(function(){btn.setAttribute('value', " در حال ذخیره .");}, 350);
-                    setTimeout(function(){btn.setAttribute('value', " در حال ذخیره ..");}, 600);
-                    setTimeout(function(){btn.setAttribute('value', " در حال ذخیره ...");}, 1000);
-                    setTimeout(function(){btn.setAttribute('value', " در حال ذخیره ....");}, 1500);
-                    setTimeout(function(){btn.setAttribute('value', "  ذخیره ");}, 2000);
-                })();
+            addGroup: function () {
+                let btn = document.getElementById("btnAddGroup");
+                new myFunc().saving(btn);
                 axios.post('./group', {
                     id: this.selectGroup,
                     name: this.nameGroup
                 })
                     .then(function () {
-                        let self= this;
-                        setTimeout(function(){
-                            swal({
-                                buttons: false,
-                                title: "با موفقیت",
-                                text: `${self.nameGroup} ذخیره گردید`,
-                                icon: "success",
-                                timer: 3000
-                            });
-                            location.reload(true)
-                        },2500);
+                        let message = this.nameGroup;
+                        new myFunc().flash(message);
                     }.bind(this))
                     .catch(function (error) {
                         alert(error);
                     });
-                },
+            },
         }
     }
 </script>
