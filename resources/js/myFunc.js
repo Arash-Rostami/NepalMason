@@ -1,6 +1,6 @@
 export class myFunc {
 
-    saving(btn) {
+    static saving(btn) {
         btn.setAttribute('value', " در حال ذخیره  ");
         setTimeout(function () {
             btn.setAttribute('value', " در حال ذخیره .");
@@ -19,7 +19,7 @@ export class myFunc {
         }, 2000);
     }
 
-    flash(self) {
+    static flash(self) {
         setTimeout(function () {
             swal({
                 buttons: false,

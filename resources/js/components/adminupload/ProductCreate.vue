@@ -32,16 +32,17 @@
                         <hr>
                         <div class="form-group col-md-4 left">
                             <label for="">عنوان مشحصات</label>
-                            <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
-                                   placeholder="">
+                            <input type="text" class="form-control" name="" v-model="nameGroup">
                         </div>
                         <div class="form-group col-md-4 left">
                             <label for="parent_id">انتخاب کنید </label>
-                            <select class="form-control" name="parent_id" v-model="select">
-                                <option>
+                            <select class="form-control" name="" v-model="selectGroup">
+                                <option v-for="mgroup in mgroups" :value="mgroup.id">
+                                    {{ mgroup.name }}
                                 </option>
                             </select><br>
-                            <input type="submit" value="ذخیره" class="btn btn-primary">
+                            <input type="submit" id="btnAddGroupA" value="ذخیره" class="btn btn-primary"
+                                   @click="addGroupA">
                         </div>
                         <br>
                         <div class="form-group col-md-4 left">
@@ -175,6 +176,13 @@
                 mcategories: [],
                 nameGroup: "",
                 selectGroup: [],
+                mgroups:[],
+                nameGroup: "",
+                selectGroup:[],
+                mattributes:[],
+                nameAtrribute: "",
+                selectAttribute:[],
+
                 dropzoneOptions: {
                     url: 'https://httpbin.org/post',
                     thumbnailWidth: 150,
@@ -189,21 +197,40 @@
         },
         props: [
             'maincategory',
+            'maingroup',
+            'mainattribute',
         ],
         created() {
             this.mcategories = JSON.parse(this.maincategory);
+            this.mgroups = JSON.parse(this.maingroup);
+            this.mattributes = JSON.parse(this.mainattribute);
         },
         methods: {
             addGroup: function () {
                 let btn = document.getElementById("btnAddGroup");
-                new myFunc().saving(btn);
+                myFunc.saving(btn);
                 axios.post('./group', {
                     id: this.selectGroup,
                     name: this.nameGroup
                 })
                     .then(function () {
                         let message = this.nameGroup;
-                        new myFunc().flash(message);
+                        myFunc.flash(message);
+                    }.bind(this))
+                    .catch(function (error) {
+                        alert(error);
+                    });
+            },
+            addGroupA: function(){
+                let btn = document.getElementById("btnAddGroupA");
+                myFunc.saving(btn);
+                axios.post('./groupa', {
+                    id: this.selectGroup,
+                    name: this.nameGroup
+                })
+                    .then(function () {
+                        let message = this.nameGroup;
+                        myFunc.flash(message);
                     }.bind(this))
                     .catch(function (error) {
                         alert(error);

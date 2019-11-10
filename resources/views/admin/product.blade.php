@@ -5,6 +5,9 @@
 
         <prodctcreate
                 maincategory="{{ $category }}"
+                maingroup="{{ $group }}"
+                mainattribute="{{ $attribute }}"
+
 
 
         >

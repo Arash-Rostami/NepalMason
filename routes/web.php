@@ -20,6 +20,8 @@ Route::group(['prefix' => 'admin'], function(){
 
     Route::resource('product', 'ProductController');
     Route::post('group', 'GroupController@store');
+    Route::post('groupa', 'GroupController@addAtrribute');
+
 
 
 

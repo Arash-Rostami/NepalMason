@@ -2435,6 +2435,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue2_dropzone_dist_vue2Dropzone_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue2-dropzone/dist/vue2Dropzone.min.css */ "./node_modules/vue2-dropzone/dist/vue2Dropzone.min.css");
 /* harmony import */ var vue2_dropzone_dist_vue2Dropzone_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue2_dropzone_dist_vue2Dropzone_min_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _myFunc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../myFunc */ "./resources/js/myFunc.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
 //
 //
 //
@@ -2605,38 +2608,55 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ProductCreate",
   data: function data() {
-    return {
+    var _ref;
+
+    return _ref = {
       mcategories: [],
       nameGroup: "",
       selectGroup: [],
-      dropzoneOptions: {
-        url: 'https://httpbin.org/post',
-        thumbnailWidth: 150,
-        maxFilesize: 0.5,
-        headers: {
-          "My-Awesome-Header": "header value"
-        },
-        dictDefaultMessage: "<i class=\"fas fa-cloud-upload-alt\"></i> آپلود عکس "
-      }
-    };
+      mgroups: []
+    }, _defineProperty(_ref, "nameGroup", ""), _defineProperty(_ref, "selectGroup", []), _defineProperty(_ref, "mattributes", []), _defineProperty(_ref, "nameAtrribute", ""), _defineProperty(_ref, "selectAttribute", []), _defineProperty(_ref, "dropzoneOptions", {
+      url: 'https://httpbin.org/post',
+      thumbnailWidth: 150,
+      maxFilesize: 0.5,
+      headers: {
+        "My-Awesome-Header": "header value"
+      },
+      dictDefaultMessage: "<i class=\"fas fa-cloud-upload-alt\"></i> آپلود عکس "
+    }), _ref;
   },
   components: {
     vueDropzone: vue2_dropzone__WEBPACK_IMPORTED_MODULE_0___default.a
   },
-  props: ['maincategory'],
+  props: ['maincategory', 'maingroup', 'mainattribute'],
   created: function created() {
     this.mcategories = JSON.parse(this.maincategory);
+    this.mgroups = JSON.parse(this.maingroup);
+    this.mattributes = JSON.parse(this.mainattribute);
   },
   methods: {
     addGroup: function addGroup() {
       var btn = document.getElementById("btnAddGroup");
-      new _myFunc__WEBPACK_IMPORTED_MODULE_2__["myFunc"]().saving(btn);
+      _myFunc__WEBPACK_IMPORTED_MODULE_2__["myFunc"].saving(btn);
       axios.post('./group', {
         id: this.selectGroup,
         name: this.nameGroup
       }).then(function () {
         var message = this.nameGroup;
-        new _myFunc__WEBPACK_IMPORTED_MODULE_2__["myFunc"]().flash(message);
+        _myFunc__WEBPACK_IMPORTED_MODULE_2__["myFunc"].flash(message);
+      }.bind(this))["catch"](function (error) {
+        alert(error);
+      });
+    },
+    addGroupA: function addGroupA() {
+      var btn = document.getElementById("btnAddGroupA");
+      _myFunc__WEBPACK_IMPORTED_MODULE_2__["myFunc"].saving(btn);
+      axios.post('./groupa', {
+        id: this.selectGroup,
+        name: this.nameGroup
+      }).then(function () {
+        var message = this.nameGroup;
+        _myFunc__WEBPACK_IMPORTED_MODULE_2__["myFunc"].flash(message);
       }.bind(this))["catch"](function (error) {
         alert(error);
       });
@@ -39967,7 +39987,31 @@ var render = function() {
               _vm._v(" "),
               _c("hr"),
               _vm._v(" "),
-              _vm._m(2),
+              _c("div", { staticClass: "form-group col-md-4 left" }, [
+                _c("label", { attrs: { for: "" } }, [_vm._v("عنوان مشحصات")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.nameGroup,
+                      expression: "nameGroup"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", name: "" },
+                  domProps: { value: _vm.nameGroup },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.nameGroup = $event.target.value
+                    }
+                  }
+                })
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group col-md-4 left" }, [
                 _c("label", { attrs: { for: "parent_id" } }, [
@@ -39981,12 +40025,12 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.select,
-                        expression: "select"
+                        value: _vm.selectGroup,
+                        expression: "selectGroup"
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { name: "parent_id" },
+                    attrs: { name: "" },
                     on: {
                       change: function($event) {
                         var $$selectedVal = Array.prototype.filter
@@ -39997,25 +40041,35 @@ var render = function() {
                             var val = "_value" in o ? o._value : o.value
                             return val
                           })
-                        _vm.select = $event.target.multiple
+                        _vm.selectGroup = $event.target.multiple
                           ? $$selectedVal
                           : $$selectedVal[0]
                       }
                     }
                   },
-                  [_c("option")]
+                  _vm._l(_vm.mgroups, function(mgroup) {
+                    return _c("option", { domProps: { value: mgroup.id } }, [
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(mgroup.name) +
+                          "\n                            "
+                      )
+                    ])
+                  }),
+                  0
                 ),
                 _c("br"),
                 _vm._v(" "),
                 _c("input", {
                   staticClass: "btn btn-primary",
-                  attrs: { type: "submit", value: "ذخیره" }
+                  attrs: { type: "submit", id: "btnAddGroupA", value: "ذخیره" },
+                  on: { click: _vm.addGroupA }
                 })
               ]),
               _vm._v(" "),
               _c("br"),
               _vm._v(" "),
-              _vm._m(3)
+              _vm._m(2)
             ]
           ),
           _vm._v(" "),
@@ -40025,11 +40079,11 @@ var render = function() {
             [
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-md-4" }, [
-                  _vm._m(4),
+                  _vm._m(3),
                   _vm._v(" "),
                   _c("hr"),
                   _vm._v(" "),
-                  _vm._m(5),
+                  _vm._m(4),
                   _vm._v(" "),
                   _c("hr"),
                   _vm._v(" "),
@@ -40071,7 +40125,7 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _vm._m(6)
+                _vm._m(5)
               ])
             ]
           )
@@ -40117,25 +40171,6 @@ var staticRenderFns = [
           [_vm._v(" مرحله دوم")]
         )
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group col-md-4 left" }, [
-      _c("label", { attrs: { for: "" } }, [_vm._v("عنوان مشحصات")]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: {
-          type: "text",
-          name: "",
-          id: "",
-          "aria-describedby": "helpId",
-          placeholder: ""
-        }
-      })
     ])
   },
   function() {
@@ -57020,7 +57055,7 @@ function () {
     _classCallCheck(this, myFunc);
   }
 
-  _createClass(myFunc, [{
+  _createClass(myFunc, null, [{
     key: "saving",
     value: function saving(btn) {
       btn.setAttribute('value', " در حال ذخیره  ");
