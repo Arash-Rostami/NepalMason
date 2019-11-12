@@ -6,7 +6,10 @@
 
 require('./bootstrap');
 require('./sweetAlert');
-require('./dropzone');
+
+
+window.Dropzone = window.dropzone = require('./dropzone');
+
 
 
 

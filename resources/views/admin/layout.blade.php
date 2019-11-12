@@ -22,9 +22,13 @@
     </div>
 
 <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
+
+
     {{--@include('sweetalert::alert')--}}
     @include('partials/sweetAlert')
 </body>
 
 
+
 </html>
+

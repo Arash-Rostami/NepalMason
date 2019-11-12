@@ -12,5 +12,7 @@
 
         >
 
+               @include('partials/dropzone')
+
         </prodctcreate>
     @endsection

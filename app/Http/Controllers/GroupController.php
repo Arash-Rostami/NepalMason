@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\AttributeItem;
 use App\Group;
 use App\Attribute;
+use App\Size;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -23,5 +25,21 @@ class GroupController extends Controller
             'name' => $request->name,
             'group_id' => $request->id,]);
         $attribute->save();
+    }
+
+    public function addAttributeItem(Request $request)
+    {
+        $attributeItem = new AttributeItem([
+            'name' => $request->name,
+            'attribute_id' => $request->id,]);
+        $attributeItem->save();
+    }
+
+    public function addSize(Request $request)
+    {
+        $size = new Size([
+            'size' => $request->name,
+            'group_id' => $request->id,]);
+        $size->save();
     }
 }

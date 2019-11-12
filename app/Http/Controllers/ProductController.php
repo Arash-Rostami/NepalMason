@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Group;
 use App\Attribute;
-
-
+use App\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -45,7 +44,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product([
+            'name' => $request->name,
+            'description' => $request->desc,
+            'price' => $request->price,
+        ]);
+        $product->save();
     }
 
     /**

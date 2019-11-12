@@ -19,10 +19,11 @@ Route::group(['prefix' => 'admin'], function(){
     Route::resource('category', 'CategoryController');
 
     Route::resource('product', 'ProductController');
-    Route::post('group', 'GroupController@store');
-    Route::post('groupa', 'GroupController@addAtrribute');
-
-
+    Route::post('cat', 'GroupController@store');
+    Route::post('group', 'GroupController@addAtrribute');
+    Route::post('attr', 'GroupController@addAttributeItem');
+    Route::post('size', 'GroupController@addSize');
+    Route::post('image', 'ImageController@addImage');
 
 
 
