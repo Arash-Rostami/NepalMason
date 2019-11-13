@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
 
+    protected $table = 'products';
     protected $fillable = [
         'name', 'description', 'price'
     ];
@@ -28,7 +29,7 @@ class Product extends Model
 
     public function images()
     {
-        return $this->belongsToMany('App/Image');
+        return $this->belongsToMany(Image::class);
     }
 
     public function attributeItems()

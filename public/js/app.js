@@ -2599,8 +2599,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-// import vue2Dropzone from 'vue2-dropzone'
-// import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ProductCreate",
@@ -2619,28 +2617,10 @@ __webpack_require__.r(__webpack_exports__);
       selectSize: [],
       productName: "",
       productDesc: "",
-      productPrice: "",
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content') // dropzoneOptions: {
-      //     url: 'D:\\GitHub\\NepalMason\\NepalMason\\public\\images',
-      //     thumbnailWidth: 150,
-      //     maxFilesize: 2,
-      //     uploadMultiple: true,
-      //     headers: {"csrf-token": document.querySelector('meta[name="csrf-token"]').getAttribute('content')},
-      //     dictDefaultMessage: "<i class=\"fas fa-cloud-upload-alt\"></i> آپلود عکس ",
-      //     //acceptedFiles: ".jpg, .png",
-      // },
-      // awss3: {
-      //     headers: {"csrf-token": document.querySelector('meta[name="csrf-token"]').getAttribute('content')},
-      //     params : {},
-      //     sendFileToServer : true,
-      //     withCredentials: false
-      // },
+      productPrice: "" // csrf: document.head.querySelector('meta[name="csrf-token"]').content,
 
     };
   },
-  // components: {
-  //     vueDropzone: vue2Dropzone
-  // },
   props: ['maincategory', 'maingroup', 'mainattribute'],
   created: function created() {
     this.mcategories = JSON.parse(this.maincategory);
@@ -2713,21 +2693,7 @@ __webpack_require__.r(__webpack_exports__);
       }.bind(this))["catch"](function (error) {
         alert(error);
       });
-    } // DropZoneAddedFile: function (file) {
-    //     console.log(file)
-    //     // console.log(file.name)
-    // },
-    // DropZoneSending: function (file, xhr, formData) {
-    //     console.log(file)
-    // },
-    // DropZoneError: function (file) {
-    //     console.log(file)
-    // },
-    // DropZoneSuccess: function (file, response) {
-    //     console.log(file)
-    //     // console.log(response)
-    // }
-
+    }
   }
 });
 
@@ -7323,7 +7289,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.main[data-v-f9dd719e] {\n    margin-top: 20px;\n    direction: rtl;\n}\n.active[data-v-f9dd719e] {\n    background-color: lightblue;\n}\n.tab-content[data-v-f9dd719e] {\n    margin-top: 20px;\n}\n.tab-pane[data-v-f9dd719e] {\n    padding: 10px;\n}\n.submitBtn[data-v-f9dd719e] {\n    margin-top: 5px;\n    margin-right: 5px;\n    margin-bottom: 5px;\n}\n\n\n", ""]);
+exports.push([module.i, "\n.main[data-v-f9dd719e] {\n    margin-top: 20px;\n    direction: rtl;\n}\n.active[data-v-f9dd719e] {\n    background-color: lightblue;\n}\n.tab-content[data-v-f9dd719e] {\n    margin-top: 20px;\n}\n.tab-pane[data-v-f9dd719e] {\n    padding: 10px;\n}\n.submitBtn[data-v-f9dd719e] {\n    margin-top: 5px;\n    margin-right: 5px;\n    margin-bottom: 5px;\n}\n.dropzone[data-v-f9dd719e] {\n    width: 100%;\n    height: 100%;\n    min-height: 0px !important;\n}\n#drop[data-v-f9dd719e] {\n    margin-top: 30px;\n}\n\n\n", ""]);
 
 // exports
 
@@ -40352,58 +40318,84 @@ var render = function() {
                   _vm._v(" "),
                   _c("hr"),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "form-group" },
-                    [
-                      _c("label", { attrs: { for: "" } }, [
-                        _vm._v(" قیمت محصول")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.productPrice,
-                            expression: "productPrice"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text", name: "" },
-                        domProps: { value: _vm.productPrice },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.productPrice = $event.target.value
-                          }
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "" } }, [
+                      _vm._v(" قیمت محصول")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.productPrice,
+                          expression: "productPrice"
                         }
-                      }),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c("hr"),
-                      _vm._v(" "),
-                      _vm._t("default"),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "btn btn-primary",
-                        attrs: {
-                          type: "submit",
-                          value: "ذخیره",
-                          id: "btnAddProduct"
-                        },
-                        on: { click: _vm.addProduct }
-                      })
-                    ],
-                    2
-                  )
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text", name: "" },
+                      domProps: { value: _vm.productPrice },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.productPrice = $event.target.value
+                        }
+                      }
+                    }),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("hr")
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "btn btn-primary",
+                    attrs: {
+                      type: "submit",
+                      value: "ذخیره",
+                      id: "btnAddProduct"
+                    },
+                    on: { click: _vm.addProduct }
+                  })
                 ]),
                 _vm._v(" "),
-                _vm._m(2)
+                _vm._m(3)
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "tab-pane container", attrs: { id: "menu3" } },
+            [
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  { staticClass: "form-group col-md-12 p-lg-5" },
+                  [
+                    _vm._t("default"),
+                    _vm._v(" "),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br")
+                  ],
+                  2
+                )
               ])
             ]
           )
@@ -40448,7 +40440,37 @@ var staticRenderFns = [
           },
           [_vm._v(" مرحله دوم")]
         )
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "nav-item" }, [
+        _c(
+          "a",
+          {
+            staticClass: "nav-link",
+            attrs: { "data-toggle": "tab", href: "#menu3" }
+          },
+          [_vm._v(" مرحله سوم")]
+        )
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group " }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v(" دسته بندی کالا")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          type: "text",
+          name: "",
+          id: "",
+          "aria-describedby": "helpId",
+          placeholder: ""
+        }
+      })
     ])
   },
   function() {
@@ -40491,8 +40513,6 @@ var staticRenderFns = [
           })
         ])
       ]),
-      _vm._v(" "),
-      _c("hr"),
       _vm._v(" "),
       _c("hr"),
       _vm._v(" "),
@@ -40551,24 +40571,7 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "form-group col-md-6" }, [
-          _c("label", { attrs: { for: "" } }, [_vm._v(" دسته بندی کالا")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "",
-              id: "",
-              "aria-describedby": "helpId",
-              placeholder: ""
-            }
-          })
-        ])
-      ])
+      _c("hr")
     ])
   }
 ]

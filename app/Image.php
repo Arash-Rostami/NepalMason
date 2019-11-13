@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
+    protected $table = 'images';
     public $timestamps = false;
     protected $fillable = [
         'imagepath'
@@ -13,6 +14,6 @@ class Image extends Model
 
     public function products()
     {
-        return $this->belongsToMany('App/Product');
+        return $this->belongsToMany(Product::class);
     }
 }

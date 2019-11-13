@@ -19,10 +19,6 @@ class ImageController extends Controller
 
        $image = new Image([
           'imagepath' => "/images/{$fileName}",]);
-      // $image->save();
-      $image->products()->attach(1);
-
-
-
+       $product->images()->save($image);
     }
 }

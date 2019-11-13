@@ -12,6 +12,9 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#menu2"> مرحله دوم</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#menu3"> مرحله سوم</a>
+                    </li>
                 </ul>
                 <div class="tab-content text-right">
                     <div class="tab-pane container active" id="menu1">
@@ -92,11 +95,15 @@
                                     <label for=""> قیمت محصول</label>
                                     <input type="text" class="form-control" name="" v-model="productPrice"><br>
                                     <hr>
-                                    <slot></slot>
-                                    <br>
-                                    <input type="submit" value="ذخیره" class="btn btn-primary" id="btnAddProduct"
-                                           @click="addProduct">
                                 </div>
+                                <div class="form-group ">
+                                    <label for=""> دسته بندی کالا</label>
+                                    <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                                           placeholder="">
+                                </div>
+                                <br>
+                                <input type="submit" value="ذخیره" class="btn btn-primary" id="btnAddProduct"
+                                       @click="addProduct">
                             </div>
                             <div class="col-md-6 ">
                                 <div class="row">
@@ -105,7 +112,6 @@
                                         <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
                                                placeholder="">
                                     </div>
-
                                 </div>
                                 <hr>
                                 <div class="row">
@@ -114,9 +120,7 @@
                                         <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
                                                placeholder="">
                                     </div>
-
                                 </div>
-                                <hr>
                                 <hr>
                                 <div class="row">
                                     <div class="form-group col-md-6">
@@ -124,7 +128,6 @@
                                         <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
                                                placeholder="">
                                     </div>
-
                                 </div>
                                 <hr>
                                 <div class="row">
@@ -133,7 +136,6 @@
                                         <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
                                                placeholder="">
                                     </div>
-
                                 </div>
                                 <hr>
                                 <div class="row">
@@ -142,24 +144,22 @@
                                         <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
                                                placeholder="">
                                     </div>
-
                                 </div>
                                 <hr>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label for=""> دسته بندی کالا</label>
-                                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
-                                               placeholder="">
-                                    </div>
-
-                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane container" id="menu3">
+                        <div class="row">
+                            <div class="form-group col-md-12 p-lg-5">
+                                <slot></slot>
+                                <br><br><br><br><br><br><br><br><br><br><br><br><br>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card-footer">
-
             </div>
         </div>
 
@@ -167,10 +167,7 @@
 </template>
 
 <script>
-    // import vue2Dropzone from 'vue2-dropzone'
-    // import 'vue2-dropzone/dist/vue2Dropzone.min.css'
     import {myFunc} from "../../myFunc";
-
 
     export default {
         name: "ProductCreate",
@@ -190,28 +187,9 @@
                 productName: "",
                 productDesc: "",
                 productPrice: "",
-                csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-
-                // dropzoneOptions: {
-                //     url: 'D:\\GitHub\\NepalMason\\NepalMason\\public\\images',
-                //     thumbnailWidth: 150,
-                //     maxFilesize: 2,
-                //     uploadMultiple: true,
-                //     headers: {"csrf-token": document.querySelector('meta[name="csrf-token"]').getAttribute('content')},
-                //     dictDefaultMessage: "<i class=\"fas fa-cloud-upload-alt\"></i> آپلود عکس ",
-                //     //acceptedFiles: ".jpg, .png",
-                // },
-                // awss3: {
-                //     headers: {"csrf-token": document.querySelector('meta[name="csrf-token"]').getAttribute('content')},
-                //     params : {},
-                //     sendFileToServer : true,
-                //     withCredentials: false
-                // },
+                // csrf: document.head.querySelector('meta[name="csrf-token"]').content,
             }
         },
-        // components: {
-        //     vueDropzone: vue2Dropzone
-        // },
         props: [
             'maincategory',
             'maingroup',
@@ -290,29 +268,14 @@
                     name: this.productName,
                     desc: this.productDesc,
                     price: this.productPrice,
-                })
-                    .then(function () {
-                        let message = this.productName;
-                        myFunc.flash(message);
-                    }.bind(this))
+                }).then(function () {
+                    let message = this.productName;
+                    myFunc.flash(message);
+                }.bind(this))
                     .catch(function (error) {
                         alert(error);
                     });
             },
-            // DropZoneAddedFile: function (file) {
-            //     console.log(file)
-            //     // console.log(file.name)
-            // },
-            // DropZoneSending: function (file, xhr, formData) {
-            //     console.log(file)
-            // },
-            // DropZoneError: function (file) {
-            //     console.log(file)
-            // },
-            // DropZoneSuccess: function (file, response) {
-            //     console.log(file)
-            //     // console.log(response)
-            // }
         }
     }
 </script>
@@ -339,6 +302,16 @@
         margin-top: 5px;
         margin-right: 5px;
         margin-bottom: 5px;
+    }
+
+    .dropzone {
+        width: 100%;
+        height: 100%;
+        min-height: 0px !important;
+    }
+
+    #drop {
+        margin-top: 30px;
     }
 
 
