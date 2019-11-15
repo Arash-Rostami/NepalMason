@@ -98,8 +98,11 @@
                                 </div>
                                 <div class="form-group ">
                                     <label for=""> دسته بندی کالا</label>
-                                    <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
-                                           placeholder="">
+                                    <select class="form-control" name="parent_id" v-model="productCat">
+                                        <option v-for="mcategory in mcategories" :value="mcategory.id">
+                                            {{ mcategory.name }}
+                                        </option>
+                                    </select><br>
                                 </div>
                                 <br>
                                 <input type="submit" value="ذخیره" class="btn btn-primary" id="btnAddProduct"
@@ -109,40 +112,55 @@
                                 <div class="row">
                                     <div class="form-group col-md-6 ">
                                         <label for=""> سایز</label>
-                                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
-                                               placeholder="">
+                                        <select class="form-control" v-model="productSize">
+                                            <option v-for="msize in msizes" :value="msize.id">
+                                                {{ msize.size }}
+                                            </option>
+                                        </select>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="row">
                                     <div class="form-group col-md-6 ">
                                         <label for=""> عنوان خصوصیت</label>
-                                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
-                                               placeholder="">
+                                        <select class="form-control" v-model="productAttribute">
+                                            <option v-for="mattribute in mattributes" :value="mattribute.id">
+                                                {{ mattribute.name }}
+                                            </option>
+                                        </select>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label for=""> مقدار</label>
-                                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
-                                               placeholder="">
+                                        <select class="form-control" v-model="productAttributeItem">
+                                            <option v-for="mattributem in mattributems" :value="mattributem.id">
+                                                {{ mattributem.name }}
+                                            </option>
+                                        </select>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label for=""> برند/مارک</label>
-                                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
-                                               placeholder="">
+                                        <select class="form-control" v-model="productBrand">
+                                            <option v-for="mbrand in mbrands" :value="mbrand.id">
+                                                {{ mbrand.name }}
+                                            </option>
+                                        </select>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label for=""> تخفیف</label>
-                                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
-                                               placeholder="">
+                                        <select class="form-control" v-model="productDiscount">
+                                            <option v-for="mdiscount in mdiscounts" :value="mdiscount.id">
+                                                {{ mdiscount.name }}
+                                            </option>
+                                        </select>
                                     </div>
                                 </div>
                                 <hr>
@@ -153,7 +171,8 @@
                         <div class="row">
                             <div class="form-group col-md-12 p-lg-5">
                                 <slot></slot>
-                                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                                <br>
+                                <br><br><br><br><br><br><br><br><br><br><br><br>
                             </div>
                         </div>
                     </div>
@@ -173,32 +192,36 @@
         name: "ProductCreate",
         data: function () {
             return {
-                mcategories: [],
-                nameCat: "",
-                selectCat: [],
-                mgroups: [],
-                nameGroup: "",
-                selectGroup: [],
-                mattributes: [],
-                nameAttribute: "",
-                selectAttribute: [],
-                nameSize: "",
-                selectSize: [],
-                productName: "",
-                productDesc: "",
-                productPrice: "",
+                mcategories: [], nameCat: "", selectCat: [], productCat: [], mproducts: [],
+                mgroups: [], nameGroup: "", selectGroup: [],
+                mattributes: [], nameAttribute: "", selectAttribute: [], productAttribute: [],
+                msizes: [], selectSize: [], nameSize: "", productSize: [],
+                productName: "", productDesc: "", productPrice: "",
+                mattributems: [], productAttributeItem: [],
+                mbrands: [], productBrand: [],
+                mdiscounts: [], productDiscount: [],
                 // csrf: document.head.querySelector('meta[name="csrf-token"]').content,
             }
         },
         props: [
+            'mainproduct',
             'maincategory',
             'maingroup',
             'mainattribute',
+            'mainattributem',
+            'mainsize',
+            'mainbrand',
+            'maindiscount',
         ],
         created() {
+            this.mproducts = JSON.parse(this.mainproduct);
             this.mcategories = JSON.parse(this.maincategory);
             this.mgroups = JSON.parse(this.maingroup);
             this.mattributes = JSON.parse(this.mainattribute);
+            this.mattributems = JSON.parse(this.mainattributem);
+            this.msizes = JSON.parse(this.mainsize);
+            this.mbrands = JSON.parse(this.mainbrand);
+            this.mdiscounts = JSON.parse(this.maindiscount);
         },
         methods: {
             addCat: function () {
@@ -268,8 +291,14 @@
                     name: this.productName,
                     desc: this.productDesc,
                     price: this.productPrice,
+                    size: this.productSize,
+                    attribute: this.productAttribute,
+                    attr: this.productAttributeItem,
+                    brand: this.productBrand,
+                    discount: this.productDiscount,
+                    category: this.productCat
                 }).then(function () {
-                    let message = this.productName;
+                    let message = this.productAttributeItem;
                     myFunc.flash(message);
                 }.bind(this))
                     .catch(function (error) {

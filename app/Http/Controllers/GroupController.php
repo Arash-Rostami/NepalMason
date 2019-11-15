@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\AttributeItem;
+use App\Attributeitem;
 use App\Group;
 use App\Attribute;
 use App\Size;
@@ -27,12 +27,12 @@ class GroupController extends Controller
         $attribute->save();
     }
 
-    public function addAttributeItem(Request $request)
+    public function addAttributeitem(Request $request)
     {
-        $attributeItem = new AttributeItem([
+        $attributeitem = new Attributeitem([
             'name' => $request->name,
             'attribute_id' => $request->id,]);
-        $attributeItem->save();
+        $attributeitem->save();
     }
 
     public function addSize(Request $request)

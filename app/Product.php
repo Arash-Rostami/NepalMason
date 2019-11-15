@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -9,8 +8,11 @@ class Product extends Model
 
     protected $table = 'products';
     protected $fillable = [
-        'name', 'description', 'price'
+        'name', 'description', 'price', 'attribute_id', 'category_id',
+        'discount_id','size_id', 'brand_id','attributeitem_id',
     ];
+
+
 
     public function attributes()
     {
@@ -32,9 +34,9 @@ class Product extends Model
         return $this->belongsToMany(Image::class);
     }
 
-    public function attributeItems()
+    public function attributeitems()
     {
-        return $this->belongsToMany('App/AttributeItem');
+        return $this->belongsToMany(Attributeitem::class);
     }
 
     public function comments()

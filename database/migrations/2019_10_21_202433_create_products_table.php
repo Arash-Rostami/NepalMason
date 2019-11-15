@@ -18,13 +18,12 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->longText('description');
             $table->string('price');
-            $table->integer('attribute_id')->unsigned();
-            $table->integer('discount_id')->unsigned();
-            $table->integer('size_id')->unsigned();
-            $table->integer('brand_id')->unsigned();
-            $table->integer('attributeItem_id')->unsigned();
-            $table->integer('category_id')->unsigned();
-
+            $table->bigInteger('attribute_id')->unsigned();
+            $table->bigInteger('discount_id')->unsigned();
+            $table->bigInteger('size_id')->unsigned();
+            $table->bigInteger('brand_id')->unsigned();
+            $table->bigInteger('attributeitem_id')->unsigned();
+            $table->bigInteger('category_id')->unsigned();
             $table->foreign('attribute_id')->references('id')->on('attributes')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('discount_id')->references('id')->on('discounts')
@@ -33,7 +32,7 @@ class CreateProductsTable extends Migration
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('brand_id')->references('id')->on('brands')
                 ->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('attributeItem_id')->references('id')->on('attributeItems')
+            $table->foreign('attributeitem_id')->references('id')->on('attributeitems')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('category_id')->references('id')->on('categories')
                 ->onDelete('cascade')->onUpdate('cascade');

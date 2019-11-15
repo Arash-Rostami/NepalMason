@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Attributeitem;
+use App\Brand;
 use App\Category;
+use App\Discount;
 use App\Group;
 use App\Attribute;
 use App\Product;
+use App\Size;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -17,13 +22,25 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $product =DB::table('products')->latest('id')->get();
         $category = Category::all();
         $group = Group::all();
         $attribute = Attribute::all();
+        $attributem = Attributeitem::all();
+        $size = Size::all();
+        $brand = Brand::all();
+        $discount = Discount::all();
+
         return view('admin.product')
-                            ->with('category', $category)
-                            ->with('attribute', $attribute)
-                            ->with('group', $group);
+            ->with('product', $product)
+            ->with('category', $category)
+            ->with('attribute', $attribute)
+            ->with('group', $group)
+            ->with('attributem', $attributem)
+            ->with('size', $size)
+            ->with('brand', $brand)
+            ->with('discount', $discount);
+
     }
 
     /**
@@ -44,12 +61,18 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = new Product([
-            'name' => $request->name,
-            'description' => $request->desc,
-            'price' => $request->price,
-        ]);
-        $product->save();
+            $product = new Product([
+                'name' => $request->name,
+                'description' => $request->desc,
+                'price' => $request->price,
+                'attribute_id' => $request->attribute,
+                'discount_id' => $request->discount,
+                'size_id' => $request->size,
+                'brand_id' => $request->brand,
+                'attributeitem_id' => $request->attr,
+                'category_id' => $request->category,
+            ]);
+            $product->save();
     }
 
     /**

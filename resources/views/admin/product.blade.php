@@ -1,18 +1,20 @@
-
 @extends('admin.layout')
 
 @section('content')
 
-        <prodctcreate
-                maincategory="{{ $category }}"
-                maingroup="{{ $group }}"
-                mainattribute="{{ $attribute }}"
+    <prodctcreate
+            mainproduct="{{ $product }}"
+            maincategory="{{ $category }}"
+            maingroup="{{ $group }}"
+            mainattribute="{{ $attribute }}"
+            mainattributem="{{ $attributem }}"
+            mainsize="{{ $size }}"
+            mainbrand="{{ $brand }}"
+            maindiscount="{{ $discount }}"
+    >
 
 
+       @include('partials.dropzone')
 
-        >
-
-               @include('partials/dropzone')
-
-        </prodctcreate>
-    @endsection
+    </prodctcreate>
+@stop

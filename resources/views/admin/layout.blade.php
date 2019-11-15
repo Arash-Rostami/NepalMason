@@ -17,6 +17,8 @@
         <sidemenpanel></sidemenpanel>
 
         @yield('content')
+        @yield('dropzone')
+
         <footrpanel></footrpanel>
 
     </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAttributeItemsTable extends Migration
+class CreateAttributeitemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAttributeItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('attributeItems', function (Blueprint $table) {
+        Schema::create('attributeitems', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('attribute_id')->unsigned();
@@ -29,6 +29,6 @@ class CreateAttributeItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attributeItems');
+        Schema::dropIfExists('attributeitems');
     }
 }

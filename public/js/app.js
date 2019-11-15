@@ -2599,6 +2599,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ProductCreate",
@@ -2607,25 +2626,41 @@ __webpack_require__.r(__webpack_exports__);
       mcategories: [],
       nameCat: "",
       selectCat: [],
+      productCat: [],
+      mproducts: [],
       mgroups: [],
       nameGroup: "",
       selectGroup: [],
       mattributes: [],
       nameAttribute: "",
       selectAttribute: [],
-      nameSize: "",
+      productAttribute: [],
+      msizes: [],
       selectSize: [],
+      nameSize: "",
+      productSize: [],
       productName: "",
       productDesc: "",
-      productPrice: "" // csrf: document.head.querySelector('meta[name="csrf-token"]').content,
+      productPrice: "",
+      mattributems: [],
+      productAttributeItem: [],
+      mbrands: [],
+      productBrand: [],
+      mdiscounts: [],
+      productDiscount: [] // csrf: document.head.querySelector('meta[name="csrf-token"]').content,
 
     };
   },
-  props: ['maincategory', 'maingroup', 'mainattribute'],
+  props: ['mainproduct', 'maincategory', 'maingroup', 'mainattribute', 'mainattributem', 'mainsize', 'mainbrand', 'maindiscount'],
   created: function created() {
+    this.mproducts = JSON.parse(this.mainproduct);
     this.mcategories = JSON.parse(this.maincategory);
     this.mgroups = JSON.parse(this.maingroup);
     this.mattributes = JSON.parse(this.mainattribute);
+    this.mattributems = JSON.parse(this.mainattributem);
+    this.msizes = JSON.parse(this.mainsize);
+    this.mbrands = JSON.parse(this.mainbrand);
+    this.mdiscounts = JSON.parse(this.maindiscount);
   },
   methods: {
     addCat: function addCat() {
@@ -2686,9 +2721,15 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('./product', {
         name: this.productName,
         desc: this.productDesc,
-        price: this.productPrice
+        price: this.productPrice,
+        size: this.productSize,
+        attribute: this.productAttribute,
+        attr: this.productAttributeItem,
+        brand: this.productBrand,
+        discount: this.productDiscount,
+        category: this.productCat
       }).then(function () {
-        var message = this.productName;
+        var message = this.productAttributeItem;
         _myFunc__WEBPACK_IMPORTED_MODULE_0__["myFunc"].flash(message);
       }.bind(this))["catch"](function (error) {
         alert(error);
@@ -40349,7 +40390,57 @@ var render = function() {
                     _c("hr")
                   ]),
                   _vm._v(" "),
-                  _vm._m(2),
+                  _c("div", { staticClass: "form-group " }, [
+                    _c("label", { attrs: { for: "" } }, [
+                      _vm._v(" دسته بندی کالا")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.productCat,
+                            expression: "productCat"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { name: "parent_id" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.productCat = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      _vm._l(_vm.mcategories, function(mcategory) {
+                        return _c(
+                          "option",
+                          { domProps: { value: mcategory.id } },
+                          [
+                            _vm._v(
+                              "\n                                        " +
+                                _vm._s(mcategory.name) +
+                                "\n                                    "
+                            )
+                          ]
+                        )
+                      }),
+                      0
+                    ),
+                    _c("br")
+                  ]),
                   _vm._v(" "),
                   _c("br"),
                   _vm._v(" "),
@@ -40364,7 +40455,271 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(3)
+                _c("div", { staticClass: "col-md-6 " }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "form-group col-md-6 " }, [
+                      _c("label", { attrs: { for: "" } }, [_vm._v(" سایز")]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.productSize,
+                              expression: "productSize"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.productSize = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        _vm._l(_vm.msizes, function(msize) {
+                          return _c(
+                            "option",
+                            { domProps: { value: msize.id } },
+                            [
+                              _vm._v(
+                                "\n                                            " +
+                                  _vm._s(msize.size) +
+                                  "\n                                        "
+                              )
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "form-group col-md-6 " }, [
+                      _c("label", { attrs: { for: "" } }, [
+                        _vm._v(" عنوان خصوصیت")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.productAttribute,
+                              expression: "productAttribute"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.productAttribute = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        _vm._l(_vm.mattributes, function(mattribute) {
+                          return _c(
+                            "option",
+                            { domProps: { value: mattribute.id } },
+                            [
+                              _vm._v(
+                                "\n                                            " +
+                                  _vm._s(mattribute.name) +
+                                  "\n                                        "
+                              )
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "form-group col-md-6" }, [
+                      _c("label", { attrs: { for: "" } }, [_vm._v(" مقدار")]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.productAttributeItem,
+                              expression: "productAttributeItem"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.productAttributeItem = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        _vm._l(_vm.mattributems, function(mattributem) {
+                          return _c(
+                            "option",
+                            { domProps: { value: mattributem.id } },
+                            [
+                              _vm._v(
+                                "\n                                            " +
+                                  _vm._s(mattributem.name) +
+                                  "\n                                        "
+                              )
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "form-group col-md-6" }, [
+                      _c("label", { attrs: { for: "" } }, [
+                        _vm._v(" برند/مارک")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.productBrand,
+                              expression: "productBrand"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.productBrand = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        _vm._l(_vm.mbrands, function(mbrand) {
+                          return _c(
+                            "option",
+                            { domProps: { value: mbrand.id } },
+                            [
+                              _vm._v(
+                                "\n                                            " +
+                                  _vm._s(mbrand.name) +
+                                  "\n                                        "
+                              )
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "form-group col-md-6" }, [
+                      _c("label", { attrs: { for: "" } }, [_vm._v(" تخفیف")]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.productDiscount,
+                              expression: "productDiscount"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.productDiscount = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        _vm._l(_vm.mdiscounts, function(mdiscount) {
+                          return _c(
+                            "option",
+                            { domProps: { value: mdiscount.id } },
+                            [
+                              _vm._v(
+                                "\n                                            " +
+                                  _vm._s(mdiscount.name) +
+                                  "\n                                        "
+                              )
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("hr")
+                ])
               ])
             ]
           ),
@@ -40381,6 +40736,7 @@ var render = function() {
                     _vm._t("default"),
                     _vm._v(" "),
                     _c("br"),
+                    _vm._v(" "),
                     _c("br"),
                     _c("br"),
                     _c("br"),
@@ -40452,126 +40808,6 @@ var staticRenderFns = [
           [_vm._v(" مرحله سوم")]
         )
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group " }, [
-      _c("label", { attrs: { for: "" } }, [_vm._v(" دسته بندی کالا")]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: {
-          type: "text",
-          name: "",
-          id: "",
-          "aria-describedby": "helpId",
-          placeholder: ""
-        }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6 " }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "form-group col-md-6 " }, [
-          _c("label", { attrs: { for: "" } }, [_vm._v(" سایز")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "",
-              id: "",
-              "aria-describedby": "helpId",
-              placeholder: ""
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "form-group col-md-6 " }, [
-          _c("label", { attrs: { for: "" } }, [_vm._v(" عنوان خصوصیت")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "",
-              id: "",
-              "aria-describedby": "helpId",
-              placeholder: ""
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "form-group col-md-6" }, [
-          _c("label", { attrs: { for: "" } }, [_vm._v(" مقدار")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "",
-              id: "",
-              "aria-describedby": "helpId",
-              placeholder: ""
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "form-group col-md-6" }, [
-          _c("label", { attrs: { for: "" } }, [_vm._v(" برند/مارک")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "",
-              id: "",
-              "aria-describedby": "helpId",
-              placeholder: ""
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "form-group col-md-6" }, [
-          _c("label", { attrs: { for: "" } }, [_vm._v(" تخفیف")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "",
-              id: "",
-              "aria-describedby": "helpId",
-              placeholder: ""
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr")
     ])
   }
 ]
@@ -57156,7 +57392,32 @@ Dropzone.options.mydropzone = {
   // The name that will be used to transfer the file
   maxFilesize: 2,
   // MB
-  dictDefaultMessage: "<i class=\"fas fa-cloud-upload-alt\"></i> آپلود عکس  "
+  dictDefaultMessage: "<i class=\"fas fa-cloud-upload-alt\"></i> آپلود عکس  ",
+  autoProcessQueue: false,
+  uploadMultiple: true,
+  parallelUploads: 100,
+  maxFiles: 100,
+  init: function init() {
+    var myDropzone = this; // First change the button to actually tell Dropzone to process the queue.
+
+    this.element.querySelector("button[type=submit]").addEventListener("click", function (e) {
+      // Make sure that the form isn't actually being sent.
+      e.preventDefault();
+      e.stopPropagation();
+      myDropzone.processQueue();
+    }); // Listen to the sendingmultiple event. In this case, it's the sendingmultiple event instead
+    // of the sending event because uploadMultiple is set to true.
+
+    this.on("sendingmultiple", function () {// Gets triggered when the form is actually being sent.
+      // Hide the success button or the complete form.
+    });
+    this.on("successmultiple", function (files, response) {// Gets triggered when the files have successfully been sent.
+      // Redirect user or notify of success.
+    });
+    this.on("errormultiple", function (files, response) {// Gets triggered when there was an error sending the files.
+      // Maybe show form again, and notify user of error
+    });
+  }
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 

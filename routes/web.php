@@ -21,7 +21,7 @@ Route::group(['prefix' => 'admin'], function(){
     Route::resource('product', 'ProductController');
     Route::post('cat', 'GroupController@store');
     Route::post('group', 'GroupController@addAtrribute');
-    Route::post('attr', 'GroupController@addAttributeItem');
+    Route::post('attr', 'GroupController@addAttributeitem');
     Route::post('size', 'GroupController@addSize');
     Route::post('image', 'ImageController@addImage');
 
