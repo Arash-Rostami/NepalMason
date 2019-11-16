@@ -57394,7 +57394,18 @@ Dropzone.options.mydropzone = {
   // MB
   dictDefaultMessage: "<i class=\"fas fa-cloud-upload-alt\"></i> آپلود عکس  ",
   parallelUploads: 100,
-  maxFiles: 100
+  maxFiles: 100,
+  complete: function complete() {
+    setTimeout(function () {
+      swal({
+        buttons: false,
+        title: "با موفقیت",
+        text: " \u0630\u062E\u06CC\u0631\u0647 \u06AF\u0631\u062F\u06CC\u062F",
+        icon: "success",
+        timer: 3000
+      }), 1000;
+    });
+  }
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
