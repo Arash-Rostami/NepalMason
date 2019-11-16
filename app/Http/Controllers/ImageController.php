@@ -11,25 +11,48 @@ class ImageController extends Controller
 {
     public function addImage(Request $request)
     {
-        if ($request->file('file')) {
-                $file = $request->file('file');
-                $fileName = uniqid() . $file->getClientOriginalName();
-                $file->move(public_path('images'), $fileName);
-                $imagepath = "/images/{$fileName}";
-                function image_path($imagepath){return $imagepath;}
+        list($file, $product) = $this->fileId($request);
 
-            $image = new Image([
-                    'imagepath' => $imagepath,]);
-                $image->save();
+        $imagepath = $this->changeName($file);
 
-        }
-        $imagepat= image_path($imagepath);
-        if ($request->product) {
-             //   $product = DB::table('images')->last();
-                $image = DB::table('images')->where('imagepath',
-                    '==', $imagepat)->first();
-                //$product->images()->save($image);
+        $this->saveFile($imagepath, $product);
 
-        }
     }
+
+    /**
+     * @param Request $request
+     * @return array
+     */
+    public function fileId(Request $request): array
+    {
+        $file = $request->file('file');
+        $product = (Product::orderBy('id', 'desc')->first())->id;
+        return array($file, $product);
+    }
+
+    /**
+     * @param $file
+     * @return string
+     */
+    public function changeName($file): string
+    {
+        $fileName = uniqid() . $file->getClientOriginalName();
+        $file->move(public_path('images'), $fileName);
+        $imagepath = "/images/{$fileName}";
+        return $imagepath;
+    }
+
+    /**
+     * @param string $imagepath
+     * @param $product
+     */
+    public function saveFile(string $imagepath, $product): void
+    {
+        $image = new Image([
+            'imagepath' => $imagepath,]);
+        $image->save();
+        $image->products()->attach($product);
+    }
+
+
 }

@@ -13,7 +13,6 @@
             maindiscount="{{ $discount }}"
     >
 
-
        @include('partials.dropzone')
 
     </prodctcreate>
