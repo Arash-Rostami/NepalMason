@@ -5,7 +5,6 @@
       method="post"
       enctype="multipart/form-data">
     @csrf
-    <input type="hidden" id="prod" name="productid" value="{{$product->id}}">
 
 
     <div class="fallback">
