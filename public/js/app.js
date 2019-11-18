@@ -57396,7 +57396,6 @@ Dropzone.options.mydropzone = {
   autoProcessQueue: false,
   uploadMultiple: true,
   parallelUploads: 100,
-  maxFiles: 100,
   init: function init() {
     var myDropzone = this; // First change the button to actually tell Dropzone to process the queue.
 
@@ -57418,6 +57417,7 @@ Dropzone.options.mydropzone = {
       // Maybe show form again, and notify user of error
     });
   }
+
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 

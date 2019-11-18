@@ -3531,5 +3531,6 @@ Dropzone.options.mydropzone = {
     maxFilesize: 2, // MB
     dictDefaultMessage: "<i class=\"fas fa-cloud-upload-alt\"></i> آپلود عکس  ",
     parallelUploads: 100,
+
 }
 
