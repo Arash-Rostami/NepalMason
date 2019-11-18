@@ -16,7 +16,7 @@ class Product extends Model
 
     public function attributes()
     {
-        return $this->belongsToMany('App/Attribute');
+        return $this->belongsToMany(Attribute::class);
     }
 
     public function orders()
@@ -54,8 +54,8 @@ class Product extends Model
         return $this->belongsTo('App/Discount');
     }
 
-    public function size()
+    public function sizes()
     {
-        return $this->belongsTo('App/Size');
+        return $this->belongsToMany(Size::class);
     }
 }

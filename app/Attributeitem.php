@@ -14,11 +14,11 @@ class Attributeitem extends Model
 
     public function products()
     {
-        return $this->belongsToMany('App/Product');
+        return $this->belongsToMany(Product::class);
     }
 
     public function attribute()
     {
-        return $this->belongsTo('App/Attribute');
+        return $this->belongsTo(Attribute::class);
     }
 }

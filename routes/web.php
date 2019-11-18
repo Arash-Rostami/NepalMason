@@ -24,6 +24,8 @@ Route::group(['prefix' => 'admin'], function(){
     Route::post('attr', 'GroupController@addAttributeitem');
     Route::post('size', 'GroupController@addSize');
     Route::post('image', 'ImageController@addImage');
+    Route::post('char', 'ImageController@addChar');
+
 
 
 

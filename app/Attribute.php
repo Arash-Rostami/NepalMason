@@ -13,17 +13,17 @@ class Attribute extends Model
 
     public function products()
     {
-        return $this->belongsToMany('App/Product');
+        return $this->belongsToMany(Product::class);
     }
 
     public function group()
     {
-        return $this->belongsTo('App/Group');
+        return $this->belongsTo(Group::class);
     }
 
-    public function attributeItems()
+    public function attributeitems()
     {
-        return $this->hasMany('App/AttributeIem');
+        return $this->hasMany(Attributeitem::class);
 
     }
 }
