@@ -1,5 +1,3 @@
-
-
 <form action="/admin/image"
       class="dropzone"
       id="mydropzone"

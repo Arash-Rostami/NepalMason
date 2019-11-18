@@ -109,6 +109,38 @@
                                        @click="addProduct">
                             </div>
                             <div class="col-md-6 ">
+                                <div class="row">
+                                    <div class="form-group col-md-6 ">
+                                        <label for=""> سایز</label>
+                                        <select class="form-control" v-model="productSize">
+                                            <option v-for="msize in msizes" :value="msize.id">
+                                                {{ msize.size }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="form-group col-md-6 ">
+                                        <label for=""> عنوان خصوصیت</label>
+                                        <select class="form-control" v-model="productAttribute">
+                                            <option v-for="mattribute in mattributes" :value="mattribute.id">
+                                                {{ mattribute.name }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for=""> مقدار</label>
+                                        <select class="form-control" v-model="productAttributeItem">
+                                            <option v-for="mattributem in mattributems" :value="mattributem.id">
+                                                {{ mattributem.name }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <hr>
                                 <div class="row">
                                     <div class="form-group col-md-6">
@@ -139,49 +171,17 @@
                         <div class="row">
                             <div class="form-group col-md-12 p-lg-5">
                                 <slot></slot>
+                                <br>
+                                <br><br><br><br><br><br><br><br><br><br><br><br>
                             </div>
                         </div>
-                        <br>
-                        <div class="row">
-                            <div class="form-group col-md-4 ">
-                                <label for=""> سایز</label>
-                                <select class="form-control" v-model="productSize">
-                                    <option v-for="msize in msizes" :value="msize.id">
-                                        {{ msize.size }}
-                                    </option>
-                                </select>
-                            </div>
-                            <hr>
-                            <div class="form-group col-md-4 ">
-                                <label for=""> عنوان خصوصیت</label>
-                                <select class="form-control" v-model="productAttribute">
-                                    <option v-for="mattribute in mattributes" :value="mattribute.id">
-                                        {{ mattribute.name }}
-                                    </option>
-                                </select>
-                            </div>
-                            <hr>
-                            <div class="form-group col-md-4">
-                                <label for=""> مقدار</label>
-                                <select class="form-control" v-model="productAttributeItem">
-                                    <option v-for="mattributem in mattributems" :value="mattributem.id">
-                                        {{ mattributem.name }}
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="col-2">
-                                <input type="submit" value="ذخیره" class="btn btn-primary" id="btnAddSiAttr"
-                                       @click="addSiAttr">
-                            </div>
-                        </div>
-                        <br><br>
                     </div>
                 </div>
             </div>
+            <div class="card-footer">
+            </div>
         </div>
-        <div class="card-footer">
-            <br>
-        </div>
+
     </div>
 </template>
 
@@ -291,7 +291,9 @@
                     name: this.productName,
                     desc: this.productDesc,
                     price: this.productPrice,
-
+                    size: this.productSize,
+                    attribute: this.productAttribute,
+                    attr: this.productAttributeItem,
                     brand: this.productBrand,
                     discount: this.productDiscount,
                     category: this.productCat
@@ -302,22 +304,6 @@
                     .catch(function (error) {
                         alert(error);
                     });
-            },
-            addSiAttr: function () {
-                let btn = document.getElementById("btnAddSiAttr");
-                myFunc.saving(btn);
-                axios.post('./char', {
-                    size: this.productSize,
-                    attribute: this.productAttribute,
-                    attr: this.productAttributeItem,
-                }).then(function () {
-                    // let message = this.productSize;
-                    // myFunc.flash(message);
-                }.bind(this))
-                    .catch(function (error) {
-                        alert(error);
-                        console.log(this.productSize);
-                    }.bind(this));
             },
         }
     }

@@ -2722,6 +2722,9 @@ __webpack_require__.r(__webpack_exports__);
         name: this.productName,
         desc: this.productDesc,
         price: this.productPrice,
+        size: this.productSize,
+        attribute: this.productAttribute,
+        attr: this.productAttributeItem,
         brand: this.productBrand,
         discount: this.productDiscount,
         category: this.productCat
@@ -2731,20 +2734,6 @@ __webpack_require__.r(__webpack_exports__);
       }.bind(this))["catch"](function (error) {
         alert(error);
       });
-    },
-    addSiAttr: function addSiAttr() {
-      var btn = document.getElementById("btnAddSiAttr");
-      _myFunc__WEBPACK_IMPORTED_MODULE_0__["myFunc"].saving(btn);
-      axios.post('./char', {
-        size: this.productSize,
-        attribute: this.productAttribute,
-        attr: this.productAttributeItem
-      }).then(function () {// let message = this.productSize;
-        // myFunc.flash(message);
-      }.bind(this))["catch"](function (error) {
-        alert(error);
-        console.log(this.productSize);
-      }.bind(this));
     }
   }
 });
@@ -40467,6 +40456,162 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-6 " }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "form-group col-md-6 " }, [
+                      _c("label", { attrs: { for: "" } }, [_vm._v(" سایز")]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.productSize,
+                              expression: "productSize"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.productSize = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        _vm._l(_vm.msizes, function(msize) {
+                          return _c(
+                            "option",
+                            { domProps: { value: msize.id } },
+                            [
+                              _vm._v(
+                                "\n                                            " +
+                                  _vm._s(msize.size) +
+                                  "\n                                        "
+                              )
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "form-group col-md-6 " }, [
+                      _c("label", { attrs: { for: "" } }, [
+                        _vm._v(" عنوان خصوصیت")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.productAttribute,
+                              expression: "productAttribute"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.productAttribute = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        _vm._l(_vm.mattributes, function(mattribute) {
+                          return _c(
+                            "option",
+                            { domProps: { value: mattribute.id } },
+                            [
+                              _vm._v(
+                                "\n                                            " +
+                                  _vm._s(mattribute.name) +
+                                  "\n                                        "
+                              )
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "form-group col-md-6" }, [
+                      _c("label", { attrs: { for: "" } }, [_vm._v(" مقدار")]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.productAttributeItem,
+                              expression: "productAttributeItem"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.productAttributeItem = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        _vm._l(_vm.mattributems, function(mattributem) {
+                          return _c(
+                            "option",
+                            { domProps: { value: mattributem.id } },
+                            [
+                              _vm._v(
+                                "\n                                            " +
+                                  _vm._s(mattributem.name) +
+                                  "\n                                        "
+                              )
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
                   _c("hr"),
                   _vm._v(" "),
                   _c("div", { staticClass: "row" }, [
@@ -40587,182 +40732,34 @@ var render = function() {
                 _c(
                   "div",
                   { staticClass: "form-group col-md-12 p-lg-5" },
-                  [_vm._t("default")],
+                  [
+                    _vm._t("default"),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br"),
+                    _c("br")
+                  ],
                   2
                 )
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "form-group col-md-4 " }, [
-                  _c("label", { attrs: { for: "" } }, [_vm._v(" سایز")]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.productSize,
-                          expression: "productSize"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.productSize = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        }
-                      }
-                    },
-                    _vm._l(_vm.msizes, function(msize) {
-                      return _c("option", { domProps: { value: msize.id } }, [
-                        _vm._v(
-                          "\n                                    " +
-                            _vm._s(msize.size) +
-                            "\n                                "
-                        )
-                      ])
-                    }),
-                    0
-                  )
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group col-md-4 " }, [
-                  _c("label", { attrs: { for: "" } }, [
-                    _vm._v(" عنوان خصوصیت")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.productAttribute,
-                          expression: "productAttribute"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.productAttribute = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        }
-                      }
-                    },
-                    _vm._l(_vm.mattributes, function(mattribute) {
-                      return _c(
-                        "option",
-                        { domProps: { value: mattribute.id } },
-                        [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(mattribute.name) +
-                              "\n                                "
-                          )
-                        ]
-                      )
-                    }),
-                    0
-                  )
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group col-md-4" }, [
-                  _c("label", { attrs: { for: "" } }, [_vm._v(" مقدار")]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.productAttributeItem,
-                          expression: "productAttributeItem"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.productAttributeItem = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        }
-                      }
-                    },
-                    _vm._l(_vm.mattributems, function(mattributem) {
-                      return _c(
-                        "option",
-                        { domProps: { value: mattributem.id } },
-                        [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(mattributem.name) +
-                              "\n                                "
-                          )
-                        ]
-                      )
-                    }),
-                    0
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-2" }, [
-                  _c("input", {
-                    staticClass: "btn btn-primary",
-                    attrs: {
-                      type: "submit",
-                      value: "ذخیره",
-                      id: "btnAddSiAttr"
-                    },
-                    on: { click: _vm.addSiAttr }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _c("br")
+              ])
             ]
           )
         ])
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(2)
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-footer" })
+    ])
   ])
 }
 var staticRenderFns = [
@@ -40812,12 +40809,6 @@ var staticRenderFns = [
         )
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer" }, [_c("br")])
   }
 ]
 render._withStripped = true
