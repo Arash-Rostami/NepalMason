@@ -43,7 +43,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
               <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
               <folding>
                 <element signature="e#40#62#0#PHP" expanded="true" />
@@ -56,7 +55,6 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ImageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
               <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
               <folding>
                 <element signature="e#40#58#0#PHP" expanded="true" />
@@ -318,6 +316,10 @@
             <path>
               <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
               <item name="NepalMason" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NepalMason" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -325,21 +327,6 @@
               <item name="NepalMason" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NepalMason" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NepalMason" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="adminupload" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
