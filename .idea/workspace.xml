@@ -36,6 +36,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="26">
               <caret line="148" column="84" lean-forward="true" selection-start-line="148" selection-start-column="84" selection-end-line="148" selection-end-column="84" />
+
             </state>
           </provider>
         </entry>
@@ -64,6 +65,7 @@
                 <element signature="e#1899#2111#0#PHP" />
                 <element signature="e#2298#2437#0#PHP" />
                 <element signature="e#2179#2725#0#PHP" />
+
               </folding>
             </state>
           </provider>
@@ -153,6 +155,7 @@
         <option value="$PROJECT_DIR$/resources/views/admin/product.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/components/adminupload/ProductCreate.vue" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" />
+
       </list>
     </option>
   </component>
@@ -316,6 +319,7 @@
             <path>
               <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
               <item name="NepalMason" type="462c0819:PsiDirectoryNode" />
+
             </path>
             <path>
               <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
@@ -445,11 +449,13 @@
       <workItem from="1573891314119" duration="1594000" />
       <workItem from="1573952980955" duration="6438000" />
       <workItem from="1574030156415" duration="7218000" />
+
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="268810000" />
+
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
@@ -577,6 +583,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/myFunc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/images/5dca837a8e5d8IMG-01.jpg" />
     <entry file="file://$PROJECT_DIR$/database/migrations/migrated/2019_10_21_210137_create_image_product_table.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -677,6 +690,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/test.blade.php">
+
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
@@ -817,6 +831,7 @@
             <element signature="e#1899#2111#0#PHP" />
             <element signature="e#2298#2437#0#PHP" />
             <element signature="e#2179#2725#0#PHP" />
+
           </folding>
         </state>
       </provider>

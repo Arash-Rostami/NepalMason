@@ -57403,7 +57403,7 @@ Dropzone.options.mydropzone = {
   // MB
   dictDefaultMessage: "<i class=\"fas fa-cloud-upload-alt\"></i> آپلود عکس  ",
   parallelUploads: 100,
-  maxFiles: 100,
+  maxFiles: 100
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 

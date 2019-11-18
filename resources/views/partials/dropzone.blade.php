@@ -16,6 +16,12 @@
 </form>
 
 
+<form action="/admin/image" method="post">
+    @csrf
+
+    <input type="submit" value="{{$product->name}}" class="btn btn-primary">
+</form>
+
 
 
 

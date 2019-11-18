@@ -3526,22 +3526,10 @@ function __guardMethod__(obj, methodName, transform) {
 
 }
 
-
 Dropzone.options.mydropzone = {
     paramName: "file", // The name that will be used to transfer the file
     maxFilesize: 2, // MB
     dictDefaultMessage: "<i class=\"fas fa-cloud-upload-alt\"></i> آپلود عکس  ",
     parallelUploads: 100,
-    maxFiles: 100,
-    complete: function(){
-        setTimeout(function () {
-            swal({
-                buttons: false,
-                title: "با موفقیت",
-                text: ` ذخیره گردید`,
-                icon: "success",
-                timer: 3000
-            }), 1000});
-    }
 }
 
