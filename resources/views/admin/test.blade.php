@@ -1,6 +1,3 @@
 
 
-<p>
-
-    {{$product}}
-</p>
+{{dd($request)}}

@@ -22,7 +22,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        list($product, $category, $group, $attribute, $attributem, $size, $brand, $discount) = $this->dbData();
+        $product =DB::table('products')->latest('id')->get();
+        $category = Category::all();
+        $group = Group::all();
+        $attribute = Attribute::all();
+        $attributem = Attributeitem::all();
+        $size = Size::all();
+        $brand = Brand::all();
+        $discount = Discount::all();
 
         return view('admin.product')
             ->with('product', $product)
@@ -111,21 +118,5 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    /**
-     * @return array
-     */
-    public function dbData(): array
-    {
-        $product = Product::orderBy('id', 'desc')->first();
-        $category = Category::all();
-        $group = Group::all();
-        $attribute = Attribute::all();
-        $attributem = Attributeitem::all();
-        $size = Size::all();
-        $brand = Brand::all();
-        $discount = Discount::all();
-        return array($product, $category, $group, $attribute, $attributem, $size, $brand, $discount);
     }
 }

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88d8e4a6-dd5e-41e8-8304-e166a53c1846" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/test.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/Attribute.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Attribute.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Attributeitem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Attributeitem.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" afterDir="false" />
@@ -12,6 +14,22 @@
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/adminupload/ProductCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/adminupload/ProductCreate.vue" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/AttributeItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Attributeitem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/migrated/2019_10_21_202433_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_21_202433_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/migrated/2019_10_21_205803_create_attribute_items_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/migrated/2019_10_21_205803_create_attribute_items_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/migrated/2019_10_21_205934_create_attribute_item_product_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/migrated/2019_10_21_205934_create_attribute_item_product_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/adminupload/ProductCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/adminupload/ProductCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/dropzone.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/dropzone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product.blade.php" afterDir="false" />
+>>>>>>> parent of df24e7fb... =all product done
       <change beforePath="$PROJECT_DIR$/resources/views/partials/dropzone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/dropzone.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -27,6 +45,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/adminupload/ProductCreate.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26">
+              <caret line="174" column="80" selection-start-line="174" selection-start-column="80" selection-end-line="174" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/partials/dropzone.blade.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -34,14 +61,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/adminupload/ProductCreate.vue">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="26">
               <caret line="148" column="84" lean-forward="true" selection-start-line="148" selection-start-column="84" selection-end-line="148" selection-end-column="84" />
 
+=======
+            <state relative-caret-position="130">
+              <caret line="5" column="49" lean-forward="true" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+>>>>>>> parent of df24e7fb... =all product done
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
               <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" /><state>
@@ -49,10 +82,26 @@
                 <element signature="e#40#62#0#PHP" expanded="true" />
                 <element signature="e#2693#3146#0#PHP" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/app/Product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/product.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+>>>>>>> parent of df24e7fb... =all product done
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ImageController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -66,6 +115,33 @@
                 <element signature="e#2298#2437#0#PHP" />
                 <element signature="e#2179#2725#0#PHP" />
 
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="461">
+              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/dropzone.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="3537" column="22" lean-forward="true" selection-start-line="3537" selection-start-column="22" selection-end-line="3537" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+              <folding>
+                <element signature="e#40#62#0#PHP" expanded="true" />
+>>>>>>> parent of df24e7fb... =all product done
               </folding>
             </state>
           </provider>
@@ -140,11 +216,21 @@
         <option value="$PROJECT_DIR$/database/migrations/migrated/2019_10_21_205803_create_attribute_items_table.php" />
         <option value="$PROJECT_DIR$/app/AttributeItem.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/test.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_21_202433_create_products_table.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/resources/views/admin/test.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/layout.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/resources/js/dropzone.js" />
+=======
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/adminupload/ProductCreate.vue" />
+        <option value="$PROJECT_DIR$/resources/js/dropzone.js" />
+        <option value="$PROJECT_DIR$/app/Product.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/product.blade.php" />
+>>>>>>> parent of df24e7fb... =all product done
         <option value="$PROJECT_DIR$/resources/views/partials/dropzone.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_17_224952_create_product_size_table.php" />
@@ -336,6 +422,27 @@
               <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
               <item name="NepalMason" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NepalMason" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="adminupload" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NepalMason" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NepalMason" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -348,6 +455,16 @@
             <path>
               <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
               <item name="NepalMason" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NepalMason" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NepalMason" type="462c0819:PsiDirectoryNode" />
+>>>>>>> parent of df24e7fb... =all product done
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -444,23 +561,30 @@
       <workItem from="1573694066419" duration="11781000" />
       <workItem from="1573712028369" duration="11201000" />
       <workItem from="1573767861589" duration="4582000" />
+<<<<<<< HEAD
       <workItem from="1573851121489" duration="11234000" />
       <workItem from="1573887579764" duration="3628000" />
       <workItem from="1573891314119" duration="1594000" />
       <workItem from="1573952980955" duration="6438000" />
       <workItem from="1574030156415" duration="7218000" />
 
+=======
+>>>>>>> parent of df24e7fb... =all product done
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="268810000" />
 
+=======
+    <option name="totallyTimeSpent" value="238698000" />
+>>>>>>> parent of df24e7fb... =all product done
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3191801" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3191801" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -652,7 +776,18 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/database/migrations/migrated/2019_10_21_202433_create_products_table.php">
+=======
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/test.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_21_202433_create_products_table.php">
+>>>>>>> parent of df24e7fb... =all product done
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="689">
           <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
@@ -679,13 +814,21 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GroupController.php">
+=======
+    <entry file="file://$PROJECT_DIR$/app/Attributeitem.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="36" />
-          <folding>
-            <element signature="e#40#62#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="286">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+>>>>>>> parent of df24e7fb... =all product done
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
@@ -699,6 +842,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="351">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
@@ -745,19 +889,38 @@
           <folding>
             <element signature="e#40#62#0#PHP" expanded="true" />
             <element signature="e#2693#3146#0#PHP" />
+=======
+        <state relative-caret-position="26">
+          <caret line="174" column="80" selection-start-line="174" selection-start-column="80" selection-end-line="174" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GroupController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="36" />
+          <folding>
+            <element signature="e#40#62#0#PHP" expanded="true" />
+>>>>>>> parent of df24e7fb... =all product done
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/resources/js/dropzone.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="676">
           <caret line="26" column="21" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="21" />
+=======
+        <state relative-caret-position="490">
+          <caret line="3537" column="22" lean-forward="true" selection-start-line="3537" selection-start-column="22" selection-end-line="3537" selection-end-column="22" />
+>>>>>>> parent of df24e7fb... =all product done
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_17_224952_create_product_size_table.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="3">
           <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
         </state>
@@ -795,18 +958,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
           <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Attribute.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+=======
+        <state relative-caret-position="461">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Product.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+>>>>>>> parent of df24e7fb... =all product done
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Attribute.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="156">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+=======
+        <state relative-caret-position="130">
+          <caret line="5" column="49" lean-forward="true" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+>>>>>>> parent of df24e7fb... =all product done
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="390">
           <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
         </state>
@@ -832,6 +1012,29 @@
             <element signature="e#2298#2437#0#PHP" />
             <element signature="e#2179#2725#0#PHP" />
 
+=======
+        <state relative-caret-position="520">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#40#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/product.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding>
+            <element signature="e#40#62#0#PHP" expanded="true" />
+>>>>>>> parent of df24e7fb... =all product done
           </folding>
         </state>
       </provider>
